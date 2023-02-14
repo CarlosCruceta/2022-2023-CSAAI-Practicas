@@ -1,0 +1,16 @@
+/* Ejemplo de hoja de estilo */
+
+/* Estilo para el cuerpo del HTML */
+body {
+    background-color: rgb(1, 78, 104);
+  }
+  
+  /* Estilo para las etiquetas de tipo h1 */
+  h1 {
+    color:rgb(250, 137, 45);
+  }
+  
+  /* Estilo para los párrafos */
+  p {
+    color: white;
+  }
