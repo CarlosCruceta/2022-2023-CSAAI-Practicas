@@ -2,3 +2,13 @@ body {
     background-color: #faf614;
     color: blueviolet;
   }
+
+h1 {
+
+    margin: 20px 16px;
+    font-size: 36px;
+}
+
+p{
+    margin-left: 32px;
+}
