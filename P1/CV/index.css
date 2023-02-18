@@ -5,6 +5,13 @@
     box-sizing: border-box;
   }
   
+
+  body {
+    background: no-repeat;
+    background-image: url(fondo.jpg);
+    background-size: cover;
+    
+}
 /* Crear columnas de ancho diferente que se colocan una a continuación de la otra */
 .columna {
 float: left;
@@ -25,6 +32,10 @@ width: 75%;
 content: "";
 display: table;
 clear: both;
+}
+
+#imgprincipal {
+  background-color:rgb(7, 220, 228);
 }
 
 #c1 {
