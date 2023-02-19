@@ -28,14 +28,14 @@ width: 75%;
 }
 
 /* Clear floats despues de las columnas para eliminar la superposición */
-.filla:after {
+.fila:after {
 content: "";
 display: table;
 clear: both;
 }
 
 #imgprincipal {
-  background-color:rgb(7, 220, 228);
+  background-color:rgb(129, 7, 228);
 }
 
 #c1 {
