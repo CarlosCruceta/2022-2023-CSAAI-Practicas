@@ -13,7 +13,7 @@
   font-weight: 400;
   font-display: swap;
   src: url(https://fonts.gstatic.com/s/bangers/v20/FeVQS0BTqb0h60ACH55Q2A.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  
 }
 
 body {
@@ -47,10 +47,12 @@ h2 {
   color: black;
   background-color: rgb(243, 206, 136);
   opacity: 0.9;
+  padding-top: 0%;
   padding-bottom: 5px;
   border-color: black;
   border-style: solid;
   margin-bottom: 5px;
+  margin-top: 10px;
 }
 /* Crear columnas de ancho diferente que se colocan una a continuación de la otra */
 .columna {
@@ -96,6 +98,20 @@ clear: both;
 img {
     width: 100%;
     height: auto;
+}
+
+.Botón {
+  background-color: rgb(115, 10, 214);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 .iresponsive {
