@@ -1,0 +1,120 @@
+/* https://www.w3schools.com/howto/howto_css_two_columns.asp */
+/* https://developer.mozilla.org/es/docs/Web/CSS/box-sizing */
+/* Así definimos el comportamiento de caja para todos los elementos */
+* {
+    box-sizing: border-box;
+  }
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@font-face {
+  font-family: 'Bangers';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/bangers/v20/FeVQS0BTqb0h60ACH55Q2A.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+body {
+    background: no-repeat;
+    background-image: url(fondo.jpg);
+    background-size: cover;
+    font-family: 'Bangers', cursive;
+    }
+    
+
+h1 {
+  text-align: center;
+  background-color: coral;
+  font-size: 80px;
+}
+
+h2 {
+  color: black;
+  text-align: center;
+  background-color: coral;
+  font-size: 40px;
+  padding: 16px;
+}
+
+.lista {
+  list-style-image: url(esfera.png); 
+  list-style-type: square;
+}
+
+.caja {
+  color: black;
+  background-color: rgb(243, 206, 136);
+  opacity: 0.9;
+  padding-bottom: 5px;
+  border-color: black;
+  border-style: solid;
+  margin-bottom: 5px;
+}
+/* Crear columnas de ancho diferente que se colocan una a continuación de la otra */
+.columna {
+float: left;
+padding: 10px;
+min-height: 500px;
+
+}
+
+.izquierda {
+width: 30%;
+}
+
+.derecha {
+width: 70%;
+}
+
+/* Clear floats despues de las columnas para eliminar la superposición */
+.fila:after {
+content: "";
+display: table;
+clear: both;
+}
+
+#imgprincipal {
+  background-color: white;
+  border-radius: 5%;
+  border-color: black;
+  border-style: solid;
+}
+
+#c1 {
+    background-color: none;
+}
+
+#c2 {
+    background-color: none;
+}
+
+/* estilos para imágenes https://www.w3schools.com/css/css3_images.asp */
+/* posicionamiento de imágenes https://www.w3schools.com/css/css_positioning.asp */
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.iresponsive {
+    padding: 0 6px;
+    float: left;
+    width: 80%;
+  }
+
+/* Responsive layout - cuando el ancho de pantalla es menor a 600px, muestra las columnas apiladas. */
+/* Así conseguimos que el contenido se vea bien en dispositvos móviles */
+
+@media screen and (max-width: 600px) {
+    .columna {
+      width: 100%;
+    }
+
+    .iresponsive {
+        width: 100%;
+    }
+}
+
+/* Más sobre diseño web responsive https://www.w3schools.com/css/css_rwd_intro.asp */
