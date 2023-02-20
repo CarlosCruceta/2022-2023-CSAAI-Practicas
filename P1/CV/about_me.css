@@ -18,7 +18,7 @@ src: url(https://fonts.gstatic.com/s/bangers/v20/FeVQS0BTqb0h60ACH55Q2A.woff2) f
 
 body {
   background: no-repeat;
-  background-image: url(fondo4.jpg);
+  background-image: url(bolas.jpeg);
   background-size: cover;
   font-family: 'Bangers', cursive;
   }
@@ -26,14 +26,17 @@ body {
 
 h1 {
 text-align: center;
-background-color: coral;
+background-color: rgb(78, 140, 255);
 font-size: 80px;
+border-color: black;
+border-style: solid;
+
 }
 
 h2 {
 color: black;
 text-align: center;
-background-color: coral;
+background-color: rgb(78, 140, 255);;
 font-size: 40px;
 padding: 16px;
 }
@@ -50,7 +53,7 @@ margin-left: 40px;
 
 .caja {
 color: black;
-background-color: rgb(243, 206, 136);
+background-color: rgb(136, 227, 243);
 opacity: 0.9;
 padding-top: 0%;
 padding-bottom: 5px;
