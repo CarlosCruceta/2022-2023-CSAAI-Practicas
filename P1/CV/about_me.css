@@ -92,7 +92,7 @@ display: table;
 clear: both;
 }
 
-#imgprincipal {
+.imagen_about {
 background-color: white;
 border-radius: 5%;
 border-color: black;
@@ -116,7 +116,7 @@ img {
 }
 
 .Botón {
-
+color: transparent  ;
 background-color: rgb(39, 105, 228);
 border: none;
 color: white;

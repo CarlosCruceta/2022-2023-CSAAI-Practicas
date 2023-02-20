@@ -21,6 +21,7 @@ body {
     background-image: url(fondo.jpg);
     background-size: cover;
     font-family: 'Bangers', cursive;
+    
     }
     
 
@@ -28,6 +29,8 @@ h1 {
   text-align: center;
   background-color: coral;
   font-size: 80px;
+  padding-bottom: 40px;
+  
 }
 
 h2 {
@@ -38,6 +41,10 @@ h2 {
   padding: 16px;
 }
 
+p{
+  text-align: center;
+  font-size: 30px;
+}
 .lista {
   list-style-image: url(esfera.png); 
   list-style-type: square;
@@ -66,6 +73,63 @@ h2 {
   opacity: 1.0;
 }
 
+.caja_botón {
+  color: transparent;
+  padding-top: 0%;
+  padding-bottom: 5px;
+  border-style: none;
+  border-width: 6px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-right: 40px;
+}
+
+.Botón {
+  color: black;
+  background-image: url(esfera_grande.png);
+  font-family: 'Bangers', cursive;
+  font-size: 30px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border-style: none;
+  height: 300px;
+  width: 300px;
+  background-size: 280px 200px;
+  background-position: center;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  transition:all 0.5s
+  
+}
+
+span{
+  color: white;
+}
+.Botón span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.Botón span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.Botón:hover span {
+  padding-right: 25px;
+}
+
+.Botón:hover span:after {
+  opacity: 1;
+  right: 0;
+}
 /* Crear columnas de ancho diferente que se colocan una a continuación de la otra */
 .columna {
 float: left;
@@ -94,7 +158,17 @@ clear: both;
   border-radius: 5%;
   border-color: black;
   border-style: solid;
+  width: 100%;
+  height: auto;
 }
+
+#logoprincipal {
+  
+  padding-top: 20px;
+  
+}
+
+
 
 #c1 {
     background-color: none;
@@ -107,25 +181,6 @@ clear: both;
 /* estilos para imágenes https://www.w3schools.com/css/css3_images.asp */
 /* posicionamiento de imágenes https://www.w3schools.com/css/css_positioning.asp */
 
-img {
-    width: 100%;
-    height: auto;
-}
-
-.Botón {
-
-  background-color: rgb(39, 105, 228);
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  display: inline-block;
-  font-size: 24px;
-  margin: 4px 100px;
-  cursor: pointer;
-  transition-duration: 0.4s;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
 
 a{
   color: aliceblue;
