@@ -2,48 +2,73 @@
 /* https://developer.mozilla.org/es/docs/Web/CSS/box-sizing */
 /* Así definimos el comportamiento de caja para todos los elementos */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@font-face {
+font-family: 'Bangers';
+font-style: normal;
+font-weight: 400;
+font-display: swap;
+src: url(https://fonts.gstatic.com/s/bangers/v20/FeVQS0BTqb0h60ACH55Q2A.woff2) format('woff2');
+
+}
+
+body {
+  background: no-repeat;
+  background-image: url(fondo4.jpg);
+  background-size: cover;
+  font-family: 'Bangers', cursive;
   }
   
-@font-face {
-  font-family: "MiLetra";
-  src: url(Saiyan-Sans.ttf);
-}
-body {
-    background: no-repeat;
-    background-image: url(fondo.jpg);
-    background-size: cover;
-    font-family: "MiLetra";
-    }
-    
 
 h1 {
-  text-align: center;
-  background-color: coral;
+text-align: center;
+background-color: coral;
+font-size: 80px;
 }
 
 h2 {
-  color: black;
-  text-align: center;
-  background-color: coral;
+color: black;
+text-align: center;
+background-color: coral;
+font-size: 40px;
+padding: 16px;
 }
 
 .lista {
-  list-style-image: url(esfera.png); 
-  list-style-type: square;
+list-style-image: url(esfera.png); 
+list-style-type: square;
+margin-left: 40px;
+}
+
+.datos_personales {
+margin-left: 40px;
 }
 
 .caja {
-  color: black;
-  background-color: rgb(243, 206, 136);
-  opacity: 0.9;
-  padding-bottom: 5px;
-  border-color: black;
-  border-style: solid;
+color: black;
+background-color: rgb(243, 206, 136);
+opacity: 0.9;
+padding-top: 0%;
+padding-bottom: 5px;
+border-color: black;
+border-style: solid;
+border-width: 6px;
+margin-bottom: 5px;
+margin-top: 10px;
+margin-right: 40px;
 }
+
+.caja:hover {
+opacity: 1.0;
+}
+
 /* Crear columnas de ancho diferente que se colocan una a continuación de la otra */
 .columna {
-float: left;
+float: right;
 padding: 10px;
 min-height: 500px;
 
@@ -65,45 +90,65 @@ clear: both;
 }
 
 #imgprincipal {
-  background-color: white;
-  border-radius: 5%;
-  border-color: black;
-  border-style: solid;
+background-color: white;
+border-radius: 5%;
+border-color: black;
+border-style: solid;
 }
 
 #c1 {
-    background-color: none;
+  background-color: none;
 }
 
 #c2 {
-    background-color: none;
+  background-color: none;
 }
 
 /* estilos para imágenes https://www.w3schools.com/css/css3_images.asp */
 /* posicionamiento de imágenes https://www.w3schools.com/css/css_positioning.asp */
 
 img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
+}
+
+.Botón {
+
+background-color: rgb(39, 105, 228);
+border: none;
+color: white;
+padding: 15px 32px;
+text-align: center;
+display: inline-block;
+font-size: 24px;
+margin: 4px 100px;
+cursor: pointer;
+transition-duration: 0.4s;
+box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+a{
+color: aliceblue;
+text-decoration: none;
 }
 
 .iresponsive {
-    padding: 0 6px;
-    float: left;
-    width: 80%;
-  }
+  padding: 0 6px;
+  float: left;
+  width: 80%;
+}
 
 /* Responsive layout - cuando el ancho de pantalla es menor a 600px, muestra las columnas apiladas. */
 /* Así conseguimos que el contenido se vea bien en dispositvos móviles */
 
 @media screen and (max-width: 600px) {
-    .columna {
-      width: 100%;
-    }
+  .columna {
+    width: 100%;
+  }
 
-    .iresponsive {
-        width: 100%;
-    }
+  .iresponsive {
+      width: 100%;
+  }
 }
 
 /* Más sobre diseño web responsive https://www.w3schools.com/css/css_rwd_intro.asp */
