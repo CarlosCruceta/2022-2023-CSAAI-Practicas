@@ -66,10 +66,11 @@ h2 {
 }
 
 .lista {
-  list-style-image: url(esfera.png); 
+  list-style-image: url(esfera2.png); 
   list-style-type: square;
   margin-left: 5%;
   padding-bottom: 1%;
+  font-size: 20px;
 }
 
 .datos_personales {
@@ -136,15 +137,16 @@ h2 {
   background-color: transparent;
   background-repeat: no-repeat;
   border-style: none;
-  height: 300px;
-  width: 300px;
+  height: 280px;
+  width: 280px;
   background-size: 280px 200px;
   background-position: center;
   text-align: center;
   display: inline-block;
   cursor: pointer;
   transition:all 0.5s;
-  border-left: 5px;
+  border-left: 3px;
+  padding: 0%;
   
   
 }
