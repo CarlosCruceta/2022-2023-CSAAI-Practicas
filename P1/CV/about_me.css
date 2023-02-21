@@ -69,6 +69,65 @@ margin-right: 40px;
 opacity: 1.0;
 }
 
+.caja_botón {
+  color: transparent;
+  padding-top: 0%;
+  padding-bottom: 5px;
+  border-style: none;
+  border-width: 6px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-right: 40px;
+}
+
+.Botón {
+  color: black;
+  background-image: url(esfera_grande.png);
+  font-family: 'Bangers', cursive;
+  font-size: 30px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border-style: none;
+  height: 300px;
+  width: 300px;
+  background-size: 280px 200px;
+  background-position: center;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  transition:all 0.5s;
+  border-left: 5px;
+  
+  
+}
+
+span{
+  color: white;
+}
+.Botón span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.Botón span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.Botón:hover span {
+  padding-right: 25px;
+}
+
+.Botón:hover span:after {
+  opacity: 1;
+  right: 0;
+}
 /* Crear columnas de ancho diferente que se colocan una a continuación de la otra */
 .columna {
 float: right;

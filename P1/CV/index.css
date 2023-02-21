@@ -30,6 +30,10 @@ h1 {
   background-color: coral;
   font-size: 80px;
   padding-bottom: 40px;
+  border-color: black;
+  border-style: solid;
+  border-width: 6px;
+
   
 }
 
@@ -99,7 +103,9 @@ p{
   text-align: center;
   display: inline-block;
   cursor: pointer;
-  transition:all 0.5s
+  transition:all 0.5s;
+  border-left: 5px;
+  
   
 }
 
