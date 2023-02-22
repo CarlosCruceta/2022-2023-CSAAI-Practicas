@@ -82,7 +82,7 @@ h2 {
 }
 
 /* Cajas de la columna izquierda*/
-.caja_izq {
+.caja_der {
   width: 100%;
   height: auto;
   color: black;
@@ -95,11 +95,10 @@ h2 {
   border-width: 5px;
   margin-bottom: 5px;
   margin-top: 10px;
-  margin-right: 40px;
 }
 
 /* Efecto de brillo*/
-.caja_izq:hover {
+.caja_der:hover {
   opacity: 1.0;
 }
 
@@ -197,11 +196,12 @@ min-height: 500px;
 
 }
 
-.izquierda {
+
+.derecha {
 width: 30%;
 }
 
-.derecha {
+.izquierda {
 width: 70%;
 }
 
@@ -221,9 +221,14 @@ clear: both;
   border-color: black;
   border-style: solid;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
+#gif_der {
+  background-color: transparent;
+  width: 90%;
+  height: auto;
+}
 /* Logo del encabezado */
 
 #logoprincipal {
