@@ -50,6 +50,7 @@ h2 {
   margin-bottom: 0px;
 }
 
+/* Texto about me*/
 #parrafo_about_me{
   text-align: center;
   font-size: 30px;
@@ -57,6 +58,7 @@ h2 {
   padding-right: 3%;
 }
 
+/* Texto con info de contacto*/
 #parrafo_contacto{
   text-align: center;
   font-size: 20px;
@@ -65,6 +67,7 @@ h2 {
 
 }
 
+/* Listas*/
 .lista {
   list-style-image: url(esfera2.png); 
   list-style-type: square;
@@ -73,10 +76,12 @@ h2 {
   font-size: 20px;
 }
 
+
 .datos_personales {
   margin-left: 40px;
 }
 
+/* Cajas de la columna izquierda*/
 .caja_izq {
   width: 100%;
   height: auto;
@@ -93,10 +98,12 @@ h2 {
   margin-right: 40px;
 }
 
+/* Efecto de brillo*/
 .caja_izq:hover {
   opacity: 1.0;
 }
 
+/* Cajas de la columna derecha*/
 .caja {
   width: 100%;
   height: auto;
@@ -113,10 +120,12 @@ h2 {
   margin-right: 40px;
 }
 
+/* Efecto de brillo*/
 .caja:hover {
   opacity: 1.0;
 }
 
+/* Caja del botón*/
 .caja_botón {
   width: 100%;
   height: auto;
@@ -129,6 +138,7 @@ h2 {
   padding-left: 10%;
 }
 
+ /* Botón*/
 .Botón {
   color: black;
   background-image: url(esfera_grande.png);
@@ -151,6 +161,7 @@ h2 {
   
 }
 
+/* Movimiento en el texto del botón*/
 span{
   color: white;
 }
@@ -201,6 +212,8 @@ display: table;
 clear: both;
 }
 
+/* Imagen principal */
+
 #imgprincipal {
   background-color: white;
   border-width: 5px;
@@ -210,6 +223,8 @@ clear: both;
   width: 100%;
   height: auto;
 }
+
+/* Logo del encabezado */
 
 #logoprincipal {
   
@@ -227,9 +242,8 @@ clear: both;
     background-color: none;
 }
 
-/* estilos para imágenes https://www.w3schools.com/css/css3_images.asp */
-/* posicionamiento de imágenes https://www.w3schools.com/css/css_positioning.asp */
 
+/* Enalce a about_me */
 
 a{
   color: aliceblue;
