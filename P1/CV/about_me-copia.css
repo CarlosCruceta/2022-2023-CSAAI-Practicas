@@ -117,11 +117,26 @@ h2 {
   margin-bottom: 5px;
   margin-top: 10px;
   margin-right: 40px;
+  text-align: center;
 }
+
 
 /* Efecto de brillo*/
 .caja:hover {
   opacity: 1.0;
+}
+#caja_tabla {
+  margin: 0px auto;
+  padding: 5%;
+}
+#tabla {
+  display: flex;
+  justify-content: center;
+}
+
+th{
+  font-size: 30px;
+
 }
 
 /* Caja del botón*/
