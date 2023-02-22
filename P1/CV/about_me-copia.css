@@ -139,6 +139,11 @@ th{
 
 }
 
+td{
+  font-size: 20px;
+
+}
+
 /* Caja del botón*/
 .caja_botón {
   width: 100%;
