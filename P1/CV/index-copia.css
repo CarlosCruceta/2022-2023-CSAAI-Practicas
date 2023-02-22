@@ -1,0 +1,299 @@
+/* Así definimos el comportamiento de caja para todos los elementos */
+* {
+    box-sizing: border-box;
+  }
+
+/* Tipo de fuente externa*/
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@font-face {
+  font-family: 'Bangers';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/bangers/v20/FeVQS0BTqb0h60ACH55Q2A.woff2) format('woff2');
+  
+}
+
+body {
+    background: no-repeat;
+    background-image: url(fondo.jpg);
+    background-size: cover;
+    font-family: 'Bangers', cursive;
+    
+    }
+    
+
+h1 {
+  text-align: center;
+  background-color: coral;
+  font-size: 100px;
+  border-color: black;
+  border-style: solid;
+  border-width: 5px;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  margin-left: 1%;
+  margin-right: 1%;
+
+  
+}
+
+h2 {
+  border-color: black;
+  border-style: solid none solid none;
+  color: black;
+  text-align: center;
+  background-color: coral;
+  font-size: 40px;
+  padding: 16px;
+  margin-bottom: 0px;
+}
+
+/* Texto about me*/
+#parrafo_about_me{
+  text-align: center;
+  font-size: 30px;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+/* Texto con info de contacto*/
+#parrafo_contacto{
+  text-align: center;
+  font-size: 20px;
+  padding-top: 2%;
+  padding-bottom: 2%;
+
+}
+
+/* Listas*/
+.lista {
+  list-style-image: url(esfera2.png); 
+  list-style-type: square;
+  margin-left: 5%;
+  padding-bottom: 1%;
+  font-size: 20px;
+}
+
+
+.datos_personales {
+  margin-left: 40px;
+}
+
+/* Cajas de la columna izquierda*/
+.caja_izq {
+  width: 100%;
+  height: auto;
+  color: black;
+  background-color: rgb(243, 206, 136);
+  opacity: 0.9;
+  padding-top: 0%;
+  padding-bottom: 5px;
+  border-color: black;
+  border-style: solid;
+  border-width: 5px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-right: 40px;
+}
+
+/* Efecto de brillo*/
+.caja_izq:hover {
+  opacity: 1.0;
+}
+
+/* Cajas de la columna derecha*/
+.caja {
+  width: 100%;
+  height: auto;
+  color: black;
+  background-color: rgb(243, 206, 136);
+  opacity: 0.9;
+  padding-top: 0%;
+  padding-bottom: 5px;
+  border-color: black;
+  border-style: solid;
+  border-width: 5px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-right: 40px;
+}
+
+/* Efecto de brillo*/
+.caja:hover {
+  opacity: 1.0;
+}
+
+/* Caja del botón*/
+.caja_botón {
+  width: 100%;
+  height: auto;
+  color: transparent;
+  padding-top: 0%;
+  padding-bottom: 5px;
+  border-style: none;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  padding-left: 10%;
+}
+
+ /* Botón*/
+.Botón {
+  color: black;
+  background-image: url(esfera_grande.png);
+  font-family: 'Bangers', cursive;
+  font-size: 30px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border-style: none;
+  height: 280px;
+  width: 280px;
+  background-size: 280px 200px;
+  background-position: center;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  transition:all 0.5s;
+  border-left: 3px;
+  padding-left: 0%;
+  
+  
+}
+
+/* Movimiento en el texto del botón*/
+span{
+  color: white;
+}
+.Botón span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.Botón span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.Botón:hover span {
+  padding-right: 25px;
+}
+
+.Botón:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+/* Crear columnas de ancho diferente que se colocan una a continuación de la otra */
+.columna {
+float: left;
+padding: 10px;
+min-height: 500px;
+
+}
+
+.izquierda {
+width: 30%;
+}
+
+.derecha {
+width: 70%;
+}
+
+/* Clear floats despues de las columnas para eliminar la superposición */
+.fila:after {
+content: "";
+display: table;
+clear: both;
+}
+
+/* Imagen principal */
+
+#imgprincipal {
+  background-color: white;
+  border-width: 5px;
+  border-radius: 5%;
+  border-color: black;
+  border-style: solid;
+  width: 100%;
+  height: auto;
+}
+
+/* Logo del encabezado */
+
+#logoprincipal {
+  
+  padding-top: 20px;
+  
+}
+
+
+
+#c1 {
+    background-color: none;
+}
+
+#c2 {
+    background-color: none;
+}
+
+
+/* Enalce a about_me */
+
+a{
+  color: aliceblue;
+  text-decoration: none;
+}
+
+.iresponsive {
+    padding: 0 6px;
+    float: left;
+    width: 80%;
+  }
+
+/* Responsive layout - cuando el ancho de pantalla es menor a 600px, muestra las columnas apiladas. */
+/* Así conseguimos que el contenido se vea bien en dispositvos móviles */
+
+@media screen and (max-width: 600px) {
+    .columna {
+      width: 100%;
+    }
+
+    .iresponsive {
+        width: 100%;
+    }
+
+    .caja_botón {
+      padding-left: 20%;
+    }
+    
+}
+
+@media screen and (max-width: 812px) {
+  h2 {
+    padding-right: 12%;
+  }
+
+  .iresponsive {
+      width: 100%;
+  }
+  
+}
+
+@media screen and (max-width: 670px) {
+  h2 {
+    padding-right: 18%;
+    padding-left: 1%;
+  }
+
+  .iresponsive {
+      width: 100%;
+  }
+  
+}
+
+
