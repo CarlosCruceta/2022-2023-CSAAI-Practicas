@@ -125,6 +125,11 @@ h2 {
 .caja:hover {
   opacity: 1.0;
 }
+
+#caja_video {
+  padding: 3%;
+
+}
 #caja_tabla {
   margin: 0px auto;
   padding: 2%;
@@ -329,6 +334,15 @@ a{
   
   #caja_tabla {
     overflow: scroll;
+  }
+  
+}
+
+@media screen and (max-width: 872px) {
+  
+  iframe {
+    width: auto;
+    height: auto;
   }
   
 }
