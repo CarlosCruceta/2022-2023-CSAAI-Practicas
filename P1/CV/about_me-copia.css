@@ -130,8 +130,10 @@ h2 {
   padding: 2%;
 }
 #tabla {
-  display: flex;
+  
   justify-content: center;
+  width: 100%;
+ 
 }
 
 th{
@@ -140,49 +142,50 @@ th{
 }
 
 td{
-  font-size: 20px;
+  font-size: 24px;
+
+}
+tr:hover{
+  background-color: coral;
 
 }
 
-/* Caja del botón*/
 .caja_botón {
-  width: 100%;
-  height: auto;
   color: transparent;
+  background-color: transparent;
   padding-top: 0%;
   padding-bottom: 5px;
   border-style: none;
+  border-width: 6px;
   margin-bottom: 5px;
   margin-top: 10px;
-  padding-left: 10%;
+  margin-right: 40px;
 }
 
- /* Botón*/
 .Botón {
-  color: black;
+  background-color:transparent;
+  color: white;
   background-image: url(esfera_grande.png);
   font-family: 'Bangers', cursive;
   font-size: 30px;
-  background-color: transparent;
   background-repeat: no-repeat;
   border-style: none;
-  height: 280px;
-  width: 280px;
-  background-size: 280px 200px;
+  height: 320px;
+  width: 320px;
+  background-size: 340px 240px;
   background-position: center;
   text-align: center;
   display: inline-block;
   cursor: pointer;
   transition:all 0.5s;
-  border-left: 3px;
-  padding-left: 0%;
+  border-left: 5px;
   
   
 }
 
-/* Movimiento en el texto del botón*/
 span{
   color: white;
+  background-color: transparent;
 }
 .Botón span {
   cursor: pointer;
@@ -318,6 +321,14 @@ a{
 
   .iresponsive {
       width: 100%;
+  }
+  
+}
+
+@media screen and (max-width: 1034px) {
+  
+  #caja_tabla {
+    overflow: scroll;
   }
   
 }
