@@ -1,54 +1,87 @@
-/* https://www.w3schools.com/howto/howto_css_two_columns.asp */
-/* https://developer.mozilla.org/es/docs/Web/CSS/box-sizing */
+
 /* Así definimos el comportamiento de caja para todos los elementos */
 * {
-  box-sizing: border-box;
-}
+    box-sizing: border-box;
+  }
 
-
+/* Tipo de fuente externa*/
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 @font-face {
-font-family: 'Bangers';
-font-style: normal;
-font-weight: 400;
-font-display: swap;
-src: url(https://fonts.gstatic.com/s/bangers/v20/FeVQS0BTqb0h60ACH55Q2A.woff2) format('woff2');
-
+  font-family: 'Bangers';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/bangers/v20/FeVQS0BTqb0h60ACH55Q2A.woff2) format('woff2');
+  
 }
 
 body {
-  background: no-repeat;
-  background-image: url(fondo.jpg);
-  background-size: cover;
-  font-family: 'Bangers', cursive;
-  }
-  
+    background: no-repeat;
+    background-image: url(fondo_nuevo.jpg);
+    background-size: cover;
+    font-family: 'Bangers', cursive;
+    
+    }
+    
 
 h1 {
   text-align: center;
   background-color: rgb(78, 140, 255);
-  background-image: url(gif_goku.gif);
-  font-size: 80px;
+  font-size: 100px;
   border-color: black;
   border-style: solid;
+  border-width: 5px;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  margin-left: 1%;
+  margin-right: 1%;
 
+  
 }
 
 h2 {
+  border-color: black;
+  border-style: solid none solid none;
   color: black;
   text-align: center;
   background-color: rgb(78, 140, 255);
   font-size: 40px;
   padding: 16px;
+  margin-bottom: 0px;
 }
 
+/* Texto about me*/
+#parrafo_about{
+  text-align: justify;
+  font-size: 25px;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+#frase_célebre{
+  text-align: center;
+  font-size: 20px;
+
+}
+
+/* Listas*/
+.lista {
+  list-style-image: url(esfera2.png); 
+  list-style-type: square;
+  margin-left: 5%;
+  padding-bottom: 1%;
+  font-size: 20px;
+}
 
 
 .datos_personales {
-margin-left: 40px;
+  margin-left: 40px;
 }
 
-.caja {
+/* Cajas de la columna izquierda*/
+.caja_der {
+  width: 100%;
+  height: auto;
   color: black;
   background-color: rgb(136, 227, 243);
   opacity: 0.9;
@@ -56,14 +89,72 @@ margin-left: 40px;
   padding-bottom: 5px;
   border-color: black;
   border-style: solid;
-  border-width: 6px;
+  border-radius: 15%;
+  border-width: 3px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+/* Efecto de brillo*/
+.caja_der:hover {
+  opacity: 1.0;
+}
+
+/* Cajas de la columna derecha*/
+.caja {
+  width: 100%;
+  height: auto;
+  color: black;
+  background-color: rgb(136, 227, 243);
+  opacity: 0.9;
+  padding-top: 0%;
+  padding-bottom: 5px;
+  border-color: black;
+  border-style: solid;
+  border-width: 5px;
   margin-bottom: 5px;
   margin-top: 10px;
   margin-right: 40px;
+  text-align: center;
 }
 
+
+/* Efecto de brillo*/
 .caja:hover {
-opacity: 1.0;
+  opacity: 1.0;
+}
+
+#caja_video {
+  padding: 3%;
+
+}
+#caja_tabla {
+  margin: 0px auto;
+  padding: 2%;
+}
+#tabla {
+  
+  justify-content: center;
+  width: 100%;
+ 
+}
+
+th{
+  font-size: 30px;
+  border-bottom: 1px solid rgb(78, 140, 255);
+  background-color: rgb(78, 140, 255);
+
+}
+
+td{
+  font-size: 24px;
+  border-bottom: 1px solid rgb(78, 140, 255);
+  
+
+}
+tr:hover{
+  background-color: rgb(78, 140, 255);
+
 }
 
 .caja_botón {
@@ -135,11 +226,12 @@ min-height: 500px;
 
 }
 
-.izquierda {
+
+.derecha {
 width: 30%;
 }
 
-.derecha {
+.izquierda {
 width: 70%;
 }
 
@@ -150,42 +242,102 @@ display: table;
 clear: both;
 }
 
-.imagen_about {
-background-color: white;
-border-radius: 5%;
-border-color: black;
-border-style: solid;
+/* Imagen principal */
+
+#imgprincipal {
+  background-color: white;
+  border-width: 5px;
+  border-radius: 5%;
+  border-color: black;
+  border-style: solid;
+  width: 100%;
+  height: 100%;
 }
 
-
-img {
+#gif_der {
+  background-color: transparent;
   width: 100%;
   height: auto;
 }
+/* Logo del encabezado */
 
+#logoprincipal {
+  
+  padding-top: 20px;
+  
+}
+
+
+
+
+
+/* Enalce a about_me */
 
 a{
-color: aliceblue;
-text-decoration: none;
+  color: aliceblue;
+  text-decoration: none;
 }
 
 .iresponsive {
-  padding: 0 6px;
-  float: left;
-  width: 80%;
-}
+    padding: 0 6px;
+    float: left;
+    width: 80%;
+  }
 
 /* Responsive layout - cuando el ancho de pantalla es menor a 600px, muestra las columnas apiladas. */
 /* Así conseguimos que el contenido se vea bien en dispositvos móviles */
 
 @media screen and (max-width: 600px) {
-  .columna {
-    width: 100%;
+    .columna {
+      width: 100%;
+    }
+
+    .iresponsive {
+        width: 100%;
+    }
+
+    .caja_botón {
+      padding-left: 20%;
+    }
+    
+}
+
+@media screen and (max-width: 812px) {
+  h2 {
+    padding-right: 12%;
   }
 
   .iresponsive {
       width: 100%;
   }
+  
 }
 
-/* Más sobre diseño web responsive https://www.w3schools.com/css/css_rwd_intro.asp */
+@media screen and (max-width: 670px) {
+  h2 {
+    padding-right: 18%;
+    padding-left: 1%;
+  }
+
+  .iresponsive {
+      width: 100%;
+  }
+  
+}
+
+@media screen and (max-width: 1034px) {
+  
+  #caja_tabla {
+    overflow: scroll;
+  }
+  
+}
+
+@media screen and (max-width: 872px) {
+  
+  iframe {
+    width: auto;
+    height: auto;
+  }
+  
+}

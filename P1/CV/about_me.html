@@ -4,91 +4,151 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About_me</title>
+    <title>ABOUT ME</title>
 
    <!-- Hoja de estilo -->
-   <link rel="stylesheet" href="about_me.css">    
+   <link rel="stylesheet" href="about_me.css">   
+   
+   <!-- Iconos externos -->
+   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 </head>
 <body>
-    
-    <h1>ABOUT ME </h1>
+    <h1>ABOUT ME 
+    <!-- Logo cabecera -->
+    <img id="logoprincipal" src="logo_goku_re.png" alt="Logo principal" width="160" height="110">
+    </h1>
 
     <div class="fila">
-        <div id="c1" class="columna izquierda">
+
+        <!-- Columna derecha -->
+        <div id="c1" class="columna derecha">
 
             <div class="iresponsive">
-                <img class="imagen_about" src="imagen_about_1.jpg" alt="principal" width="200" height="200">
-
+                <!-- Imagen principal -->
+                <img id="gif_der" src="goku_about.gif" alt="Goku principal 2" width="200" height="200">
                 
-                <div class="caja">
-                    <h2>
-                        Contacto
-                    </h2>
-                    <ul class="lista">
-                        <li>Dirección</li>
-                        <li>Telefono</li>
-                        <li>E-mail</li>
-                        <li>Fecha de nacimiento</li>
-                        <li>Redes sociales</li>
-                    </ul>
-                </div>
-                
-                <div class="caja">
-                    <h2>
-                        Más sobre mi
-                    </h2>
-                    <p>Senserit mediocrem vis ex, et dicunt deleniti gubergren mei. Mel id clita mollis repudiare. 
-                    Sed ad nostro delicatissimi, postea pertinax est an. Adhuc sensibus percipitur sed te, 
-                    eirmod tritani debitis nec ea. Cu vis quis gubergren.
+                <!-- Caja contacto -->
+                <div class="caja_der">
+                  
+                    <p id="frase_célebre">
+                        " Disculpa, vi que bajaste la guardia y simplemente ataqué, ¡ja! "
                     </p>
                 </div>
 
+                <!-- Caja Botón -->
                 <div class="caja_botón">
                     <button class="Botón">
                         <span> 
-                        <a href="https://carloscruceta.github.io/2022-2023-CSAAI-Practicas/P1/CV/">Página principal</a>
+                            <a href="https://carloscruceta.github.io/2022-2023-CSAAI-Practicas/P1/CV/">Página principal</a>
                         </span>
                     </button>
                 </div>
+                
             </div>
         </div>
 
-           
-      <div id="c2" class="columna derecha">
+        <!-- Columna izquierda -->
+        <div id="c2" class="columna izquierda">
+
+            <!-- Caja Experiencia -->
             <div class="caja">
                 <h2>Quién soy</h2>
-                <ul class="lista">
-                    <li>Dirección"</li>
-                    <li>Telefono</li>
-                    <li>E-mail</li>
-                    <li>Fecha de nacimiento</li>
-                    <li>Redes sociales</li>
-                </ul>
+                <p id="parrafo_about">
+                    Mi nombre es Son Goku, aunque también me conocen como Kakarot. Nací en el Planeta Vegeta, habitado por mi raza, los Saiyan, 
+                    conocidos en todo el universo por ser excelentes guerreros. Fui enviado a la Tierra para conquistarla cuando tan solo era 
+                    un bebé, pero un golpe en la cabeza hizo que perdiera la memoria. Este accidente anuló los instintos violentos de mi especie
+                    y me convirtió en una persona de buen corazón, aunque todavía conservase mis poderes.
+                    <br>
+                    <br>
+                    Siempre me han apasionado las artes marciales y he entrenado con algunos de los mejores luchadores del universo, incluidos 
+                    el Maestro Kame-Sennin, Karin o Whis. He buscado mejorar mis habilidades y conseguir ser más fuerte cada día, logrando nuevas
+                    formas de poder, como Super Saiyan y Ultra Instinct, las cuales me han ayudado a salvar la Tierra de varias amenazas como Freezer,
+                    Cell y Majin Buu. A veces han podido conmigo, pero he sido capaz de revivir hasta en tres ocasiones.
+                    <br>
+                    <br>
+                    Aunque me encanta una buena pelea, mi familia y amigos son lo más importante para mí. Estoy casado con Chi-Chi y tenemos dos hijos
+                    juntos, Gohan y Goten, que también son excelentes luchadores, y disfrutan viendo como soy capaz de comer una cantidad ingente de 
+                    platos, los cuales me encanta apilar, formando una inmensa torre.
+                    
+                </p>
             </div>
 
+            <!-- Caja Estudios -->
             <div class="caja">
-                <h2>Referencias</h2>
-                <ul class="lista">
-                    <li>Dirección"</li>
-                    <li>Telefono</li>
-                    <li>E-mail</li>
-                    <li>Fecha de nacimiento</li>
-                    <li>Redes sociales</li>
-                </ul>
+                <h2>
+                    Mis videos
+                    <i class="material-icons" style="font-size:40px;">videocam</i>
+                </h2>
+
+                <!-- Enlace a video de Youtube -->
+                <div id="caja_video">
+                    <iframe width="560" height="315" 
+                    src="https://www.youtube.com/embed/7x7tTAucLfo" 
+                    title="YouTube video player" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+                    </iframe>
+                </div>
             </div>
 
-            <div class="caja">
-                <h2>Mis videos</h2>
-                <ul class="lista">
-                    <li>Dirección"</li>
-                    <li>Telefono</li>
-                    <li>E-mail</li>
-                    <li>Fecha de nacimiento</li>
-                    <li>Redes sociales</li>
-                </ul>
+             <!-- Caja Logros -->
+             <div class="caja">
+                <h2>
+                    Referencias
+                    <i class="material-icons" style="font-size:40px;">group</i>
+                </h2>
+                <div id="caja_tabla">
+                    <table id="tabla">
+                        <tr>
+                            <th> </th>
+                            <th>Nombre</th>
+                            <th>Relación</th>
+                            <th> </th>
+                            <th>Nombre</th>
+                            <th>Relación</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img id="imvegeta" src="Vegeta.png" alt="Vegeta" width="140" height="140">
+                            </td>
+                            <td>Vegeta</td>
+                            <td>Antiguo enemigo</td>
+                            <td>
+                                <img id="imfreezer" src="Freezer.png" alt="Freezer" width="140" height="140">
+                            </td>
+                            <td>Freezer</td>
+                            <td>Enemigo</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img id="imsongohan" src="SonGohan.png" alt="SonGohan" width="140" height="140">
+                            </td>
+                            <td>Son Gohan</td>
+                            <td>Hijo</td>
+                            <td>
+                                <img id="imchi-chi" src="Chi-Chi.png" alt="Chi-Chi" width="140" height="140">
+                            </td>
+                            <td>Chi-Chi</td>
+                            <td>Esposa</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img id="imkame" src="Kame.png" alt="Kame" width="140" height="140">
+                            </td>
+                            <td>Kame-Sennin</td>
+                            <td>Maestro</td>
+                            <td>
+                                <img id="imkrillin" src="Krillin.png" alt="Krillin" width="140" height="140">
+                            </td>
+                            <td>Krillin</td>
+                            <td>Amigo</td>
+                        </tr>
+                    
+                    </table>
+                </div>
             </div>
 
+            
         </div>
         
     </div>
