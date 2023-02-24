@@ -25,45 +25,41 @@ body {
   
 
 h1 {
-text-align: center;
-background-color: rgb(78, 140, 255);
-background-image: url(gif_goku.gif);
-font-size: 80px;
-border-color: black;
-border-style: solid;
+  text-align: center;
+  background-color: rgb(78, 140, 255);
+  background-image: url(gif_goku.gif);
+  font-size: 80px;
+  border-color: black;
+  border-style: solid;
 
 }
 
 h2 {
-color: black;
-text-align: center;
-background-color: rgb(78, 140, 255);;
-font-size: 40px;
-padding: 16px;
+  color: black;
+  text-align: center;
+  background-color: rgb(78, 140, 255);
+  font-size: 40px;
+  padding: 16px;
 }
 
-.lista {
-list-style-image: url(esfera.png); 
-list-style-type: square;
-margin-left: 40px;
-}
+
 
 .datos_personales {
 margin-left: 40px;
 }
 
 .caja {
-color: black;
-background-color: rgb(136, 227, 243);
-opacity: 0.9;
-padding-top: 0%;
-padding-bottom: 5px;
-border-color: black;
-border-style: solid;
-border-width: 6px;
-margin-bottom: 5px;
-margin-top: 10px;
-margin-right: 40px;
+  color: black;
+  background-color: rgb(136, 227, 243);
+  opacity: 0.9;
+  padding-top: 0%;
+  padding-bottom: 5px;
+  border-color: black;
+  border-style: solid;
+  border-width: 6px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-right: 40px;
 }
 
 .caja:hover {
@@ -161,16 +157,6 @@ border-color: black;
 border-style: solid;
 }
 
-#c1 {
-  background-color: none;
-}
-
-#c2 {
-  background-color: none;
-}
-
-/* estilos para imágenes https://www.w3schools.com/css/css3_images.asp */
-/* posicionamiento de imágenes https://www.w3schools.com/css/css_positioning.asp */
 
 img {
   width: 100%;

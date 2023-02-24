@@ -17,7 +17,7 @@
 
 body {
     background: no-repeat;
-    background-image: url(fondo.jpg);
+    background-image: url(fondo_nuevo.jpg);
     background-size: cover;
     font-family: 'Bangers', cursive;
     
@@ -26,7 +26,7 @@ body {
 
 h1 {
   text-align: center;
-  background-color: coral;
+  background-color: rgb(78, 140, 255);
   font-size: 100px;
   border-color: black;
   border-style: solid;
@@ -44,25 +44,23 @@ h2 {
   border-style: solid none solid none;
   color: black;
   text-align: center;
-  background-color: coral;
+  background-color: rgb(78, 140, 255);
   font-size: 40px;
   padding: 16px;
   margin-bottom: 0px;
 }
 
 /* Texto about me*/
-#parrafo_about_me{
-  text-align: center;
-  font-size: 30px;
+#parrafo_about{
+  text-align: justify;
+  font-size: 25px;
   padding-left: 3%;
   padding-right: 3%;
 }
 
-/* Texto con info de contacto*/
-#parrafo_contacto{
+#frase_célebre{
   text-align: center;
-  font-size: 30px;
-  padding: 2%;
+  font-size: 20px;
 
 }
 
@@ -85,13 +83,14 @@ h2 {
   width: 100%;
   height: auto;
   color: black;
-  background-color: rgb(243, 206, 136);
+  background-color: rgb(136, 227, 243);
   opacity: 0.9;
   padding-top: 0%;
   padding-bottom: 5px;
   border-color: black;
   border-style: solid;
-  border-width: 5px;
+  border-radius: 15%;
+  border-width: 3px;
   margin-bottom: 5px;
   margin-top: 10px;
 }
@@ -106,7 +105,7 @@ h2 {
   width: 100%;
   height: auto;
   color: black;
-  background-color: rgb(243, 206, 136);
+  background-color: rgb(136, 227, 243);
   opacity: 0.9;
   padding-top: 0%;
   padding-bottom: 5px;
@@ -142,15 +141,19 @@ h2 {
 
 th{
   font-size: 30px;
+  border-bottom: 1px solid rgb(78, 140, 255);
+  background-color: rgb(78, 140, 255);
 
 }
 
 td{
   font-size: 24px;
+  border-bottom: 1px solid rgb(78, 140, 255);
+  
 
 }
 tr:hover{
-  background-color: coral;
+  background-color: rgb(78, 140, 255);
 
 }
 
@@ -253,7 +256,7 @@ clear: both;
 
 #gif_der {
   background-color: transparent;
-  width: 90%;
+  width: 100%;
   height: auto;
 }
 /* Logo del encabezado */
@@ -266,13 +269,6 @@ clear: both;
 
 
 
-#c1 {
-    background-color: none;
-}
-
-#c2 {
-    background-color: none;
-}
 
 
 /* Enalce a about_me */
