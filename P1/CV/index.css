@@ -247,9 +247,7 @@ a{
     width: 80%;
   }
 
-/* Responsive layout - cuando el ancho de pantalla es menor a 600px, muestra las columnas apiladas. */
-/* Así conseguimos que el contenido se vea bien en dispositvos móviles */
-
+/* Responsive layout */
 
 @media screen and (max-width: 600px) {
   .columna {
