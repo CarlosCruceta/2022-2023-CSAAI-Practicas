@@ -1,11 +1,12 @@
 console.log("Ejecutando JS...");
 
 //-- Crear objeto gui, con los elementos de la interfaz gráfica
-//-- Al tenerlo agrupado podemos pasarlo como parámetro o asignarlo
+//-- Al tenerlo agrupado podemos pasarlo como parámetro o asignárselo
 //-- a otro objeto
 const gui = {
   display: document.getElementById("display"),
-  boton: document.getElementById("boton"),
+  boton_inc: document.getElementById("boton_inc"),
+  boton_dec: document.getElementById("boton_dec")
 }
 
 //-- Objeto contador: Contiene el valor y el método para incrementarse
@@ -17,7 +18,13 @@ const counter = {
   }
 }
 
-//-- Acciones: Ligar el botón al contador
-gui.boton.onclick = () => {
-  counter.inc(1)
+//-------- Accciones:
+//-- Incrementar contador
+gui.boton_inc.onclick = () => {
+  counter.inc(1);
+}
+
+//-- Decrementar contador
+gui.boton_dec.onclick = () =>{
+  counter.inc(-1);
 }
