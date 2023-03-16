@@ -1,16 +1,15 @@
-console.log("Ejecutando JS...");
-
-display = document.getElementById("display")
-igual = document.getElementById("igual")
-clear = document.getElementById("clear")
-start = document.getElementById("Start")
-Stop = document.getElementById("Stop")
 
 //-- Obtener una colección con todos los elementos
 //-- de la clase dígito
-digitos = document.getElementsByClassName("digito")
-operaciones = document.getElementsByClassName("operacion")
-
+const gui = {
+    display : document.getElementById("display"),
+    start : document.getElementById("start"),
+    stop : document.getElementById("stop"),
+    reset : document.getElementById("reset"),
+    digitos : document.getElementsByClassName("digito"),
+    clave: document.getElementById("clave"),
+    secretkey: document.getElementById("secret_key")
+}
 //-- Clase cronómetro
 class Crono {
 
@@ -76,100 +75,40 @@ class Crono {
     }
 }
 
-//-- Estados de la calculadora
-const ESTADO = {
-    INIT: 0,
-    OP1: 1,
-    OPERATION: 2,
-    OP2: 3,
-  }
+const crono = new Crono(gui.display);
 
-  //-- Variable de estado
-//-- Por defecto su valor será el del estado inicial
-let estado = ESTADO.INIT;
+//---- Configurar las funciones de retrollamada
 
-//-- Función de retrollamada de los digitos
-function digito(ev)
-{
-    //-- Se ha recibido un dígito
-    //-- Según en qué estado se encuentre la calculadora
-    //-- se hará una cosa u otra
+//-- Array que almacena números secretos
+const secretkey = [];
 
-    //-- Si es el primer dígito, no lo añadimos,
-    //-- sino que lo mostramos directamente en el display
-    if (estado == ESTADO.INIT) {
+//-- Función que genera la clave secreta aleatoria
+function key(){
+    //-- Generar números aleatorios con un valor máximo
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+    }
 
-        display.innerHTML = ev.target.value;
-
-        //-- Pasar al siguiente estado
-        estado = ESTADO.OP1;
-
-    } else {
-       
-        //--En cualquier otro estado lo añadimos
-        display.innerHTML += ev.target.value;
-
-        //-- Y nos quedamos en el mismo estado
-        //-- Ojo! Este ejemplo sólo implementa el primer
-        //-- estado del diagrama. Habría que tener en 
-        //-- cuenta el resto... lo debes hacer en tu práctica
-    } 
+    //-- Generamos números secretos y los almacenamos en un array
+    for (let i = 0; i < 4; i++) {
+        let rnum = getRandomInt(9);
+        secretkey.push(rnum.toString());
+    }
+    return secretkey.join("-");
+}
+//-- Arranque del cronometro
+gui.start.onclick = () => {
+    crono.start();
+    gui.secretkey.innerHTML = key();
+    }
+      
+    //-- Detener el cronómetro
+    gui.stop.onclick = () => {
+    crono.stop();
+    }
     
-}
-
-
-//-- Establecer la misma función de retrollamada
-//-- para todos los botones de tipo dígito
-for (let boton of digitos) {
-
-    //-- Se ejecuta cuando se pulsa un boton
-    //-- que es un dígito. Para que el código sea 
-    //-- mas legible la función de retrollamada se
-    //-- escribe como una función normal (digito)
-    boton.onclick = digito;
-}
-
-//-------- Resto de funciones de retrollamada
-
-start.onclick = () => {
-    Crono.start();
-  }
-
-stop.onclick = () => {
-    Crono.Stop();
-  }
-//-- Operación de sumar
-suma.onclick = (ev) => {
-
-    //-- Insertar simbolo de sumar
-    display.innerHTML += ev.target.value;
-
-    //-- ¡Ojo! Aquí se inserta el + siempre!
-    //-- Para que la calculadora funcione bien
-    //-- sólo se debe permitir insertar el operador
-    //-- en el estado OP1, y debe cambiar el estado
-    //-- a OPERATION (según el diagrama de estados)
-  
-}
-
-//-- Evaluar la expresión
-igual.onclick = () => {
-  
-    //-- Calcular la expresión y añadirla al display
-    display.innerHTML = eval(display.innerHTML);
-
-    //-- ¡Ojo! Aquí se hace siempre!
-    //-- Sólo se debe permitir que eso se haga
-    //-- si se está en el estado final (OP2)
-  
-}
-
-//-- Poner a cero la expresión
-//-- Y volver al estado inicial
-clear.onclick = () => {
-  display.innerHTML = "0";
-  estado = ESTADO.INIT;
-}
-//-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-//-- Establecer la misma función de retrollamada
-//-- para todos los botones de tipo dígito
+    //-- Reset del cronómetro
+    gui.reset.onclick = () => {
+    crono.reset();
+    gui.secretkey.innerHTML = "****";
+    }
