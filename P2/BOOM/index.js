@@ -100,171 +100,154 @@ function key(){
     return secretkey;
 }
 
-function num_correcto(num, secret_key){
-    for(let i = 0; i < secret_key.length; i++){
-        if (num == secret_key[i]){
-            return true;
+
+const ESTADO = {
+    INIT: 0,
+    DIG1: 1,
+    DIG2: 2,
+    DIG3: 3,
+
+}
+
+
+let estado = ESTADO.INIT; 
+let clave_secreta = key();
+console.log(clave_secreta);
+
+  
+//-- Función de retrollamada de los digitos
+function digito(ev) {
+
+    gui.start.onclick = () => {
+        crono.start();
+    }
+          
+    //-- Detener el cronómetro
+    gui.stop.onclick = () => {
+        crono.stop();
+    }
+        
+    //-- Reset del cronómetro
+    gui.reset.onclick = () => {
+        crono.reset();
+        clave_secreta = key();
+        console.log(clave_secreta);
+        gui.numeros[0].innerHTML = '*';
+        gui.numeros[1].innerHTML = '*';
+        gui.numeros[2].innerHTML = '*';
+        gui.numeros[3].innerHTML = '*';
+        estado = ESTADO.INIT;
+    }
+
+
+    if (estado == ESTADO.INIT) {
+
+        crono.start();
+
+        if ((ev.target.value == clave_secreta[0])&(check1 == false)) {
+            gui.numeros[0].innerHTML = ev.target.value;
+            check1 = true;
+            estado = ESTADO.DIG1
+
+        } else if ((ev.target.value == clave_secreta[1])&(check2 == false)) {
+            gui.numeros[1].innerHTML = ev.target.value;
+            check2 = true;
+            estado = ESTADO.DIG1 
+
+        } else if ((ev.target.value == clave_secreta[2])&(check3 == false)) {
+            gui.numeros[2].innerHTML = ev.target.value;
+            check3 = true;
+            estado = ESTADO.DIG1
+
+        } else if ((ev.target.value == clave_secreta[3])&(check4 == false)) {
+            gui.numeros[3].innerHTML = ev.target.value;
+            check4 = true;
+            estado = ESTADO.DIG1
+
+        } else {
+            crono.tic();
+        }
+            
+    } else if (estado == ESTADO.DIG1) {
+           
+        if ((ev.target.value == clave_secreta[0])&(check1 == false)) {
+            gui.numeros[0].innerHTML = ev.target.value;
+            check1 = true;
+            estado = ESTADO.DIG2
+
+        } else if ((ev.target.value == clave_secreta[1])&(check2 == false)) {
+            gui.numeros[1].innerHTML = ev.target.value;
+            check2 = true;
+            estado = ESTADO.DIG2 
+
+        } else if ((ev.target.value == clave_secreta[2])&(check3 == false)) {
+            gui.numeros[2].innerHTML = ev.target.value;
+            check3 = true;
+            estado = ESTADO.DIG2
+
+        } else if ((ev.target.value == clave_secreta[3])&(check4 == false)) {
+            gui.numeros[3].innerHTML = ev.target.value;
+            check4 = true;
+            estado = ESTADO.DIG2
+
+        } else {
+            crono.tic();
+        }
+    
+    } else if (estado == ESTADO.DIG2) {
+        if ((ev.target.value == clave_secreta[0])&(check1 == false)) {
+            gui.numeros[0].innerHTML = ev.target.value;
+            check1 = true;
+            estado = ESTADO.DIG3
+
+        } else if ((ev.target.value == clave_secreta[1])&(check2 == false)) {
+            gui.numeros[1].innerHTML = ev.target.value;
+            check2 = true;
+            estado = ESTADO.DIG3 
+
+        } else if ((ev.target.value == clave_secreta[2])&(check3 == false)) {
+            gui.numeros[2].innerHTML = ev.target.value;
+            check3 = true;
+            estado = ESTADO.DIG3
+
+        } else if ((ev.target.value == clave_secreta[3])&(check4 == false)) {
+            gui.numeros[3].innerHTML = ev.target.value;
+            check4 = true;
+            estado = ESTADO.DIG3
+
+        } else {
+            crono.tic();
+        }
+
+    } else if (estado == ESTADO.DIG3) {
+           
+        if ((ev.target.value == clave_secreta[0])&(check1 == false)) {
+            gui.numeros[0].innerHTML = ev.target.value;
+            check1 = true;
+            crono.stop();
+
+        } else if ((ev.target.value == clave_secreta[1])&(check2 == false)) {
+            gui.numeros[1].innerHTML = ev.target.value;
+            check2 = true;
+            crono.stop();
+
+        } else if ((ev.target.value == clave_secreta[2])&(check3 == false)) {
+            gui.numeros[2].innerHTML = ev.target.value;
+            check3 = true;
+            crono.stop();
+
+        } else if ((ev.target.value == clave_secreta[3])&(check4 == false)) {
+            gui.numeros[3].innerHTML = ev.target.value;
+            check4 = true;
+            crono.stop();
+
+        } else {
+            crono.tic();
         }
     }
 }
 
-//-- Arranque del cronometro
-gui.start.onclick = () => {
-    crono.start();
-    }
-      
-    //-- Detener el cronómetro
-    gui.stop.onclick = () => {
-    crono.stop();
-    }
-    
-    //-- Reset del cronómetro
-    gui.reset.onclick = () => {
-    crono.reset();
-    }
+for (let boton of gui.digitos) {
 
-    const ESTADO = {
-        INIT: 0,
-        DIG1: 1,
-        DIG2: 2,
-        DIG3: 3,
-
-      }
-    
-      //-- Variable de estado
-    //-- Por defecto su valor será el del estado inicial
-    let estado = ESTADO.INIT; 
-    let clave_secreta = key();
-    console.log(clave_secreta);
-    //-- Función de retrollamada de los digitos
-    function digito(ev) {
-      
-        if (estado == ESTADO.INIT) {
-
-            crono.start();
-
-            if ((ev.target.value == clave_secreta[0])&(check1 == false)) {
-                console.log("Primer numero correcto");
-                gui.numeros[0].innerHTML = ev.target.value;
-                check1 = true;
-                estado = ESTADO.DIG1
-
-            } else if ((ev.target.value == clave_secreta[1])&(check2 == false)) {
-                console.log("Segundo numero correcto");
-                gui.numeros[1].innerHTML = ev.target.value;
-                check2 = true;
-                estado = ESTADO.DIG1 
-
-            } else if ((ev.target.value == clave_secreta[2])&(check3 == false)) {
-                console.log("Tercer numero correcto");
-                gui.numeros[2].innerHTML = ev.target.value;
-                check3 = true;
-                estado = ESTADO.DIG1
-
-            } else if ((ev.target.value == clave_secreta[3])&(check4 == false)) {
-                console.log("Cuarto numero correcto");
-                gui.numeros[3].innerHTML = ev.target.value;
-                check4 = true;
-                estado = ESTADO.DIG1
-
-            } else {
-                crono.tic();
-            }
-            
-    
-        } else if (estado == ESTADO.DIG1) {
-           
-            if ((ev.target.value == clave_secreta[0])&(check1 == false)) {
-                console.log("Primer numero correcto");
-                gui.numeros[0].innerHTML = ev.target.value;
-                check1 = true;
-                estado = ESTADO.DIG2
-
-            } else if ((ev.target.value == clave_secreta[1])&(check2 == false)) {
-                console.log("Segundo numero correcto");
-                gui.numeros[1].innerHTML = ev.target.value;
-                check2 = true;
-                estado = ESTADO.DIG2 
-
-            } else if ((ev.target.value == clave_secreta[2])&(check3 == false)) {
-                console.log("Tercer numero correcto");
-                gui.numeros[2].innerHTML = ev.target.value;
-                check3 = true;
-                estado = ESTADO.DIG2
-
-            } else if ((ev.target.value == clave_secreta[3])&(check4 == false)) {
-                console.log("Cuarto numero correcto");
-                gui.numeros[3].innerHTML = ev.target.value;
-                check4 = true;
-                estado = ESTADO.DIG2
-
-            } else {
-                crono.tic();
-            }
-    
-        
-        } else if (estado == ESTADO.DIG2) {
-            if ((ev.target.value == clave_secreta[0])&(check1 == false)) {
-                console.log("Primer numero correcto");
-                gui.numeros[0].innerHTML = ev.target.value;
-                check1 = true;
-                estado = ESTADO.DIG3
-
-            } else if ((ev.target.value == clave_secreta[1])&(check2 == false)) {
-                console.log("Segundo numero correcto");
-                gui.numeros[1].innerHTML = ev.target.value;
-                check2 = true;
-                estado = ESTADO.DIG3 
-
-            } else if ((ev.target.value == clave_secreta[2])&(check3 == false)) {
-                console.log("Tercer numero correcto");
-                gui.numeros[2].innerHTML = ev.target.value;
-                check3 = true;
-                estado = ESTADO.DIG3
-
-            } else if ((ev.target.value == clave_secreta[3])&(check4 == false)) {
-                console.log("Cuarto numero correcto");
-                gui.numeros[3].innerHTML = ev.target.value;
-                check4 = true;
-                estado = ESTADO.DIG3
-
-            } else {
-                crono.tic();
-            }
-
-        } else if (estado == ESTADO.DIG3) {
-           
-            if ((ev.target.value == clave_secreta[0])&(check1 == false)) {
-                console.log("Primer numero correcto");
-                gui.numeros[0].innerHTML = ev.target.value;
-                check1 = true;
-                crono.stop();
-
-            } else if ((ev.target.value == clave_secreta[1])&(check2 == false)) {
-                console.log("Segundo numero correcto");
-                gui.numeros[1].innerHTML = ev.target.value;
-                check2 = true;
-                crono.stop();
-
-            } else if ((ev.target.value == clave_secreta[2])&(check3 == false)) {
-                console.log("Tercer numero correcto");
-                gui.numeros[2].innerHTML = ev.target.value;
-                check3 = true;
-                crono.stop();
-
-            } else if ((ev.target.value == clave_secreta[3])&(check4 == false)) {
-                console.log("Cuarto numero correcto");
-                gui.numeros[3].innerHTML = ev.target.value;
-                check4 = true;
-                crono.stop();
-
-            } else {
-                crono.tic();
-            }
-        }
-    }
-
-    for (let boton of gui.digitos) {
-
-        boton.onclick = digito;
-    }
+    boton.onclick = digito;
+}
