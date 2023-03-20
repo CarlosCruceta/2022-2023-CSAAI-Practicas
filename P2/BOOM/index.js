@@ -114,9 +114,14 @@ let estado = ESTADO.INIT;
 let clave_secreta = key();
 console.log(clave_secreta);
 
+gui.start.onclick = () => {
+    crono.start();
+}
   
 //-- Función de retrollamada de los digitos
 function digito(ev) {
+
+    crono.start();
 
     gui.start.onclick = () => {
         crono.start();
@@ -136,6 +141,10 @@ function digito(ev) {
         gui.numeros[1].innerHTML = '*';
         gui.numeros[2].innerHTML = '*';
         gui.numeros[3].innerHTML = '*';
+        check1 = false;
+        check2 = false;
+        check3 = false;
+        check4 = false;
         estado = ESTADO.INIT;
     }
 
