@@ -117,7 +117,10 @@ console.log(clave_secreta);
 gui.start.onclick = () => {
     crono.start();
 }
-  
+
+gui.stop.onclick = () => {
+    crono.stop();
+}
 //-- Función de retrollamada de los digitos
 function digito(ev) {
 
