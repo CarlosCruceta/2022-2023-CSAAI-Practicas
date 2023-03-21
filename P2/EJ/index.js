@@ -7,7 +7,10 @@ const gui = {
     stop : document.getElementById("stop"),
     reset : document.getElementById("reset"),
     digitos : document.getElementsByClassName("digito"),
-    numeros : document.getElementsByClassName("num")
+    num1: document.getElementById("num1"),
+    num2: document.getElementById("num2"),
+    num3: document.getElementById("num3"),
+    num4: document.getElementById("num4"),
 }
 //-- Clase cronómetro
 class Crono {
@@ -79,6 +82,7 @@ let check1 = false;
 let check2 = false;
 let check3 = false;
 let check4 = false;
+let fin = false;
 
 //---- Configurar las funciones de retrollamada
 
@@ -123,8 +127,9 @@ gui.stop.onclick = () => {
 }
 //-- Función de retrollamada de los digitos
 function digito(ev) {
-
-    crono.start();
+    if (fin == false){
+        crono.start();
+    }
 
     gui.start.onclick = () => {
         crono.start();
@@ -140,39 +145,48 @@ function digito(ev) {
         crono.reset();
         clave_secreta = key();
         console.log(clave_secreta);
-        gui.numeros[0].innerHTML = '*';
-        gui.numeros[1].innerHTML = '*';
-        gui.numeros[2].innerHTML = '*';
-        gui.numeros[3].innerHTML = '*';
+        gui.num1.innerHTML = '*';
+        gui.num2.innerHTML = '*';
+        gui.num3.innerHTML = '*';
+        gui.num4.innerHTML = '*';
+        gui.num1.style.color = "red";
+        gui.num2.style.color = "red";
+        gui.num3.style.color = "red";
+        gui.num4.style.color = "red";
+        gui.display.style.color = "red";
         check1 = false;
         check2 = false;
         check3 = false;
         check4 = false;
+        fin = false;
         estado = ESTADO.INIT;
     }
 
 
     if (estado == ESTADO.INIT) {
 
-        crono.start();
-
+    
         if ((ev.target.value == clave_secreta[0])&(check1 == false)) {
-            gui.numeros[0].innerHTML = ev.target.value;
+            gui.num1.innerHTML = ev.target.value;
+            gui.num1.style.color = "green"; 
             check1 = true;
             estado = ESTADO.DIG1
 
         } else if ((ev.target.value == clave_secreta[1])&(check2 == false)) {
-            gui.numeros[1].innerHTML = ev.target.value;
+            gui.num2.innerHTML = ev.target.value;
+            gui.num2.style.color = "green"; 
             check2 = true;
             estado = ESTADO.DIG1 
 
         } else if ((ev.target.value == clave_secreta[2])&(check3 == false)) {
-            gui.numeros[2].innerHTML = ev.target.value;
+            gui.num3.innerHTML = ev.target.value;
+            gui.num3.style.color = "green"; 
             check3 = true;
             estado = ESTADO.DIG1
 
         } else if ((ev.target.value == clave_secreta[3])&(check4 == false)) {
-            gui.numeros[3].innerHTML = ev.target.value;
+            gui.num4.innerHTML = ev.target.value;
+            gui.num4.style.color = "green";
             check4 = true;
             estado = ESTADO.DIG1
 
@@ -183,22 +197,26 @@ function digito(ev) {
     } else if (estado == ESTADO.DIG1) {
            
         if ((ev.target.value == clave_secreta[0])&(check1 == false)) {
-            gui.numeros[0].innerHTML = ev.target.value;
+            gui.num1.innerHTML = ev.target.value;
+            gui.num1.style.color = "green"; 
             check1 = true;
             estado = ESTADO.DIG2
 
         } else if ((ev.target.value == clave_secreta[1])&(check2 == false)) {
-            gui.numeros[1].innerHTML = ev.target.value;
+            gui.num2.innerHTML = ev.target.value;
+            gui.num2.style.color = "green"; 
             check2 = true;
             estado = ESTADO.DIG2 
 
         } else if ((ev.target.value == clave_secreta[2])&(check3 == false)) {
-            gui.numeros[2].innerHTML = ev.target.value;
+            gui.num3.innerHTML = ev.target.value;
+            gui.num3.style.color = "green";
             check3 = true;
             estado = ESTADO.DIG2
 
         } else if ((ev.target.value == clave_secreta[3])&(check4 == false)) {
-            gui.numeros[3].innerHTML = ev.target.value;
+            gui.num4.innerHTML = ev.target.value;
+            gui.num4.style.color = "green";
             check4 = true;
             estado = ESTADO.DIG2
 
@@ -208,22 +226,27 @@ function digito(ev) {
     
     } else if (estado == ESTADO.DIG2) {
         if ((ev.target.value == clave_secreta[0])&(check1 == false)) {
-            gui.numeros[0].innerHTML = ev.target.value;
+            gui.num1.innerHTML = ev.target.value;
+            gui.num1.style.color = "green"; 
             check1 = true;
             estado = ESTADO.DIG3
 
         } else if ((ev.target.value == clave_secreta[1])&(check2 == false)) {
-            gui.numeros[1].innerHTML = ev.target.value;
+            gui.num2.innerHTML = ev.target.value;
+            gui.num2.style.color = "green"; 
             check2 = true;
             estado = ESTADO.DIG3 
 
         } else if ((ev.target.value == clave_secreta[2])&(check3 == false)) {
-            gui.numeros[2].innerHTML = ev.target.value;
+            gui.num3.innerHTML = ev.target.value;
+            gui.num3.style.color = "green";
             check3 = true;
             estado = ESTADO.DIG3
 
         } else if ((ev.target.value == clave_secreta[3])&(check4 == false)) {
-            gui.numeros[3].innerHTML = ev.target.value;
+            gui.num4.innerHTML = ev.target.value;
+            gui.num4.style.color = "green";
+            
             check4 = true;
             estado = ESTADO.DIG3
 
@@ -234,24 +257,36 @@ function digito(ev) {
     } else if (estado == ESTADO.DIG3) {
            
         if ((ev.target.value == clave_secreta[0])&(check1 == false)) {
-            gui.numeros[0].innerHTML = ev.target.value;
+            gui.num1.innerHTML = ev.target.value;
+            gui.num1.style.color = "green"; 
             check1 = true;
             crono.stop();
+            fin = true;
+            gui.display.style.color = "green";
 
         } else if ((ev.target.value == clave_secreta[1])&(check2 == false)) {
-            gui.numeros[1].innerHTML = ev.target.value;
+            gui.num2.innerHTML = ev.target.value;
+            gui.num2.style.color = "green"; 
             check2 = true;
             crono.stop();
+            fin = true;
+            gui.display.style.color = "green";
 
         } else if ((ev.target.value == clave_secreta[2])&(check3 == false)) {
-            gui.numeros[2].innerHTML = ev.target.value;
+            gui.num3.innerHTML = ev.target.value;
+            gui.num3.style.color = "green";
             check3 = true;
             crono.stop();
+            fin = true;
+            gui.display.style.color = "green";
 
         } else if ((ev.target.value == clave_secreta[3])&(check4 == false)) {
-            gui.numeros[3].innerHTML = ev.target.value;
+            gui.num4.innerHTML = ev.target.value;
+            gui.num4.style.color = "green";
             check4 = true;
             crono.stop();
+            fin = true;
+            gui.display.style.color = "green";
 
         } else {
             crono.tic();
