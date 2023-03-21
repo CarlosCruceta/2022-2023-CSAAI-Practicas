@@ -2,40 +2,54 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #ecf0f3;
-  font-family: sans-serif;
   outline: none;
 }
 
+body {
+  background: no-repeat;
+  background-image: url(fondo.avif);
+  background-size: cover;
+  }
+
 h1{
   text-align: center;
-  font-size: 50px;
-  padding-top: 5%;
+  font-size: 90px;
+  padding-top: 3%;
   padding-bottom: 3%;
+  font-family: 'Orbitron', sans-serif;
+  background-color: #ffa908;
+  margin-bottom: 5%;
 }
 .container{
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 8%;
 }
 
-.calculator{
+.tableta{
   background-color: #ecf0f3;
+  background-image: url(fondo_tableta.jpg);
   padding: 15px;
+  border-style: solid;
+  border-width: 2%;
   border-radius: 30px;
-  box-shadow: inset 5px 5px 12px #ffffff,
+  box-shadow: inset 5px 5px 12px black,
                     5px 5px 12px rgba(0,0,0,0.16);
+  margin: 0;
   
 }
 
-.input{
+#cronometro{
   grid-column: span 4;
   height: 70px;
   width: 260px;
-  background-color: #ecf0f3;
+  background-color: #cdee14;
   box-shadow: inset -5px -5px 12px #ffffff,
               inset 5px 5px 12px rgba(0,0,0,0.16);
-  border: none;
+  border-style: solid;
+  border-width: 1%;
+  border-color: black;
   border-radius: 30px;
   color: red;
   font-size: 50px;
@@ -45,33 +59,67 @@ h1{
   margin-bottom: 30px;
   padding-top: 2%;
   padding-bottom: 3%;
+  font-family: 'Oxanium', cursive;
+  
 }
 
+#pantalla{
+  grid-column: span 4;
+  height: 70px;
+  width: 260px;
+  background-color: #cdee14;
+  box-shadow: inset -5px -5px 12px #ffffff,
+              inset 5px 5px 12px rgba(0,0,0,0.16);
+  border-radius: 15px;
+  border-style: solid;
+  border-width: 1%;
+  border-color: black;
+  color: red;
+  font-size: 50px;
+  text-align: center;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  padding-top: 2%;
+  padding-bottom: 3%;
+  font-family: 'Orbitron', sans-serif;
+}
+
+
 button{
-  height: 48px;
-  width: 48px;
-  background-color: #ecf0f3;
-  box-shadow: -5px -5px 12px #ffffff,
+  height: 60px;
+  width: 60px;
+  background-color: #ffa908;
+  box-shadow: -5px -5px 12px black,
               5px 5px 12px rgba(0,0,0,0.16);
   border: none;
   border-radius: 50%;
   margin: 8px;
   font-size: 20px;
+  font-family: 'Orbitron', sans-serif;
+  border-style: solid;
+  border-width: 1%;
 }
 
 #start{
   border-radius: 20%;
   font-size: 17px;
+  width: 80px;
+  background-color: #26ee14;
 }
 
 #stop{
   border-radius: 20%;
   font-size: 17px;
+  width: 80px;
+  background-color: red;
 }
 
 #reset{
   border-radius: 20%;
   font-size: 17px;
+  width: 80px;
+  background-color: #f1f50e;
 }
 .grid-container {
   display: grid;
@@ -96,4 +144,8 @@ span{
   background: none;
 }
 
-
+@media screen and (max-width: 283px) {
+  .tableta {
+    padding: 8%;
+  }
+}
