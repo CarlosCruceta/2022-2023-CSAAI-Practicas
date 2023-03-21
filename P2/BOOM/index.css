@@ -32,7 +32,7 @@ h1{
   background-image: url(fondo_tableta.jpg);
   padding: 15px;
   border-style: solid;
-  border-width: 2%;
+  border-width: 4px;
   border-radius: 30px;
   box-shadow: inset 5px 5px 12px black,
                     5px 5px 12px rgba(0,0,0,0.16);
@@ -48,7 +48,7 @@ h1{
   box-shadow: inset -5px -5px 12px #ffffff,
               inset 5px 5px 12px rgba(0,0,0,0.16);
   border-style: solid;
-  border-width: 1%;
+  border-width: 4px;
   border-color: black;
   border-radius: 30px;
   color: red;
@@ -72,7 +72,7 @@ h1{
               inset 5px 5px 12px rgba(0,0,0,0.16);
   border-radius: 15px;
   border-style: solid;
-  border-width: 1%;
+  border-width: 4px;
   border-color: black;
   color: red;
   font-size: 50px;
@@ -98,7 +98,7 @@ button{
   font-size: 20px;
   font-family: 'Orbitron', sans-serif;
   border-style: solid;
-  border-width: 1%;
+  border-width: 4px;
 }
 
 #start{
@@ -130,10 +130,6 @@ button{
 .grid-item {
  display: flex;
  justify-content: center;
-}
-
-p{
-  background: non;
 }
 
 #display{
