@@ -3,10 +3,14 @@
   azul para distinguirlo
 */
 
+/* 
+Estilos para el campo de tiro
+*/  
+
 canvas {
-    background-color: lightblue;
-    border-style: solid;
-    border-width: 1px;
-    border-color: black;
-    border-radius: 5px;
-  }
+  background-color: lightblue;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  border-radius: 5px;
+}

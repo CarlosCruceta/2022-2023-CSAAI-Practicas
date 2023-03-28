@@ -72,63 +72,106 @@ const crono = new Crono(gui.display);
 const canvas = document.getElementById("canvas");
 
 //-- Definir el tamaño del canvas
-canvas.width = 300;
-canvas.height = 100;
+canvas.width = 800;
+canvas.height = 600;
 
 //-- Obtener el contexto del canvas
 const ctx = canvas.getContext("2d");
 
-//-- Valor del lado del rectángulo
-let lr = 20;
-//-- Coordenadas del objeto
-let x = 0;
-let y = 10;
+//-- Acceder al botón de disparo
+const btnLanzar = document.getElementById("btnLanzar");
+//-- Acceder al botón de inicio
+const btnIniciar = document.getElementById("btnIniciar");
 
-//-- Velocidades del objeto
-let velx = 3;
-let vely = 1;
+//-- Coordenadas iniciales del proyectil
+let xop = 5;
+let yop = 545;
+let xp = xop;
+let yp = yop;
 
-//-- Función principal de animacion
-function update() 
+//-- Coordenadas iniciales del objetivo
+let xomin = 200;
+let xomax = 770;
+let xo = 500; //getRandomXO(xomin,xomax);
+let yo = 570;
+
+//-- función para pintar el proyectil
+function dibujarP(x,y,lx,ly,color) {
+
+  //-- Pintando el proyectil
+  ctx.beginPath();
+
+  //-- Definir un rectángulo de dimensiones lx x ly,
+  ctx.rect(x, y, lx, ly);
+
+  //-- Color de relleno del rectángulo
+  ctx.fillStyle = color;
+
+  //-- Mostrar el relleno
+  ctx.fill();
+
+  //-- Mostrar el trazo del rectángulo
+  ctx.stroke();
+
+  ctx.closePath();
+}
+
+//-- función para pintar el objetivo
+function dibujarO(x,y) {
+
+  //-- Pintando el objetivo
+  ctx.beginPath();
+
+  //-- Dibujar un circulo: coordenadas x,y del centro
+  //-- Radio, Angulo inicial y angulo final
+  ctx.arc(x, y, 25, 0, 2 * Math.PI);
+  ctx.strokeStyle = 'blue';
+  ctx.lineWidth = 2;
+  ctx.fillStyle = 'red';
+
+  //-- Dibujar el relleno
+  ctx.fill()    
+
+  //-- Dibujar el trazo
+  ctx.stroke();
+
+  ctx.closePath();
+}
+
+//-- Dibujar el objetivo
+dibujarO(xo,yo);
+
+//-- Dibujar el proyectil
+dibujarP(xop,yop,50,50,"green");
+
+// Velocidad del proyectil
+let velp = 1;
+
+function lanzar() 
 {
-  console.log("test");
-  
-  //-- Condicion de rebote en extremos horizontales del canvas
-  if (x < 0 || x >= (canvas.width - lr) ) { 
-    velx = -velx;
-  }
+  //-- Implementación del algoritmo de animación:
 
-  //-- Condición de rebote en extremos verticales del canvas
-  if (y <= 0 || y > canvas.height- lr) {
-    vely = -vely;
-  }
-  //-- Algoritmo de animacion:
-  //-- 1) Actualizar posicion del  elemento
-  //-- (física del movimiento rectilineo uniforme)
-  
-  x = x + velx;
-  y = y + vely;
-
+  //-- 1) Actualizar posición de los elementos
+  xp = xp + velp;
+    // Detectamos si hay colisión (aquí o después de pintar los elementos )
   //-- 2) Borrar el canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  //-- 3) Dibujar los elementos visibles
-  ctx.beginPath();
-    ctx.rect(x, y, lr, lr);
+  //-- 3) Pintar los elementos en el canvas
+  dibujarO(xo,yo);
+  dibujarP(xp, yp, 50, 50, "blue"); // Pintar el proyectil
 
-    //-- Dibujar
-    ctx.fillStyle = 'red';
-
-    //-- Rellenar
-    ctx.fill();
-
-    //-- Dibujar el trazo
-    ctx.stroke()
-  ctx.closePath();
-
-  //-- 4) Volver a ejecutar update cuando toque
-  requestAnimationFrame(update);
+  //-- 4) Repetir
+  requestAnimationFrame(lanzar);
 }
 
-//-- ¡Que empiece la función!
-update();
+
+//-- Función de retrollamada del botón de disparo
+btnLanzar.onclick = () => {
+  lanzar();
+}
+
+//-- Función de retrollamada del botón iniciar
+btnIniciar.onclick = () => {
+  location.reload();
+}
