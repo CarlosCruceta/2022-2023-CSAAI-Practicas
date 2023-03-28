@@ -161,6 +161,7 @@ function lanzar()
 
   //-- 1) Actualizar posición de los elementos
   xp = xp + velp;
+  
     // Detectamos si hay colisión (aquí o después de pintar los elementos )
   //-- 2) Borrar el canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
