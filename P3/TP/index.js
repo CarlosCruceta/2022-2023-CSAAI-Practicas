@@ -89,11 +89,19 @@ let yop = 545;
 let xp = xop;
 let yp = yop;
 
+//--Generamos un número aleatorio
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
 //-- Coordenadas iniciales del objetivo
-let xomin = 200;
-let xomax = 770;
-let xo = 500; //getRandomXO(xomin,xomax);
-let yo = 570;
+let xomin = 300;
+let xomax = canvas.width;
+let yomax = canvas.height;
+let xo = getRandomInt(xomin,xomax); 
+let yo = getRandomInt(1,yomax);
 
 //-- función para pintar el proyectil
 function dibujarP(x,y,lx,ly,color) {
