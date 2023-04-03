@@ -88,8 +88,12 @@ let xop = 5;
 let yop = 545;
 let xp = xop;
 let yp = yop;
-
+let angulo0 = 70; //Ángulo inicial de lanzamiento
+let t = 0; //Se inicia el tiempo a t = 0
+let v0 = 50; //Rapidez inicial
+let g = -9.8; //Aceleración de gravedad
 //--Generamos un número aleatorio
+
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -152,15 +156,18 @@ dibujarO(xo,yo);
 //-- Dibujar el proyectil
 dibujarP(xop,yop,50,50,"green");
 
-// Velocidad del proyectil
-let velp = 1;
 
 function lanzar() 
 {
   //-- Implementación del algoritmo de animación:
 
   //-- 1) Actualizar posición de los elementos
-  xp = xp + velp;
+
+  xp = xop + v0 * Math.cos((angulo0* Math.PI) / 180) * t; //Se calcula posición x del proyectil
+  yp = yop +  Math.sin((angulo0* Math.PI )/ 180) * v0 * t -  (g * t * t /2); //Se calcula posición y del proyectil
+
+  t += 0.1;
+
   
     // Detectamos si hay colisión (aquí o después de pintar los elementos )
   //-- 2) Borrar el canvas
