@@ -256,12 +256,16 @@ function lanzar()
   col_limit = colision_limites(xp,yp,r)
 
 
-  if ((col_obj == true) || (col_limit == true)) {
+  if (col_obj == true) {
     crono.stop(); 
     gui.display2.innerHTML = "EXITO";
-  } else {
+    gui.display2.style.color = "green";
+  
+  } else if (col_limit == true) {
+    crono.stop(); 
+  
+  }else{
     requestAnimationFrame(lanzar);
-   
   }
 
 }
