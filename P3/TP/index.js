@@ -98,6 +98,9 @@ explosion.src = "explosion.gif"
 var humo = new Image();
 humo.src = "humo.png"
 
+var hechizo = new Image();
+hechizo.src = "hechizo.png"
+
 let r = 10;
 let w = 70;
 let h = 108;
@@ -201,6 +204,8 @@ dibujarO(x_h,y_h);
 
 
 
+
+
 // Circle-Rectangle Collision Detection
 function circleRectCollision(cx,cy,r,x,y,w,h) {
   // Calculate the distance between the center of the circle and the closest point on the rectangle
@@ -257,7 +262,7 @@ function lanzar()
   dibujarP(xo+10, yo+5, w, h, pcolor);
   ctx.drawImage(voldemort, xo, yo);
   dibujarO(xp,yp);
-
+  ctx.drawImage(hechizo, xp-30, yp-30);
     //-- 4) Repetir
   col_obj = circleRectCollision(xp,yp,r,xo+10,yo+5,w,h);
   col_limit = colision_limites(xp,yp,r)
@@ -265,7 +270,7 @@ function lanzar()
 
   if (col_obj == true) {
     crono.stop(); 
-    ctx.drawImage(explosion, xp-30, yp-40);
+    ctx.drawImage(explosion, xp-40, yp-60);
     gui.display2.innerHTML = "EXITO";
     gui.display2.style.color = "green";
   
