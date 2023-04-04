@@ -9,6 +9,7 @@ Estilos para el campo de tiro
 
 canvas {
   background-color: lightblue;
+  background-image: url('fondo.jpg');
   border-style: solid;
   border-width: 1px;
   border-color: black;

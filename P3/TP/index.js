@@ -88,10 +88,13 @@ voldemort.src = "voldemort_90.png";
 var hechizo = new Image();
 hechizo.src = "hechizo_50.png";
 
+var fondo = new Image();
+fondo.src = "fondo.jpg";
+
 let r = 10;
 let w = 70;
 let h = 108;
-let pcolor = "transparent";
+let pcolor = "green";
 
 
 //-- Acceder al botón de disparo
@@ -117,11 +120,6 @@ function dibujar_voldemort(x,y) {
   }
 }
 
-function dibujar_hechizo(x,y) {
-  hechizo.onload = function(){
-    ctx.drawImage(hechizo, x, y);
-  }
-}
 
 function dibujarO(x,y) {
 
@@ -194,34 +192,6 @@ dibujar_voldemort(xo,yo);
 dibujarP(xo+10, yo+5, w, h, pcolor); // Pintar rect de colision
 dibujarO(x_h,y_h);
 
-function colision(cx,cy,r,x,y,w,h)
-{
-  let px = cx; // En principio son iguales
-  let py;
-
-  if ( px < x ) {
-    px = x;
-
-  } else  if ( px > x + w ){ 
-    px = x + w;
-    py = cy;
-
-  } else if ( py < y ) { 
-    py = y;
-
-  }else if ( py > y + h ) { 
-    py = y + h;
-  }
-
-  distancia = Math.sqrt( (cx - px)*(cx - px) + (cy - py)*(cy - py) );
-
-  if ( distancia < r ) {
-	  return true;
-  }
-  else{
-    return false;
-  }
-}
 
 // Circle-Rectangle Collision Detection
 function circleRectCollision(cx,cy,r,x,y,w,h) {
@@ -241,6 +211,17 @@ function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value));
 }
 
+function colision_limites(x,y,r){
+  if (x - r < 0 || x + r > canvas.width) {
+    return true;
+
+  }else if (y - r < 0 || y + r > canvas.height) {
+    return true;
+  }else{
+    return false;
+  }
+  
+}
 
 function lanzar() 
 {
@@ -263,16 +244,20 @@ function lanzar()
   //-- 3) Pintar los elementos en el canvas
 
     //-- Dibujar
+    
   ctx.drawImage(doby, xop, yop);
   dibujarP(xo+10, yo+5, w, h, pcolor);
   ctx.drawImage(voldemort, xo, yo);
   dibujarO(xp,yp);
 
     //-- 4) Repetir
-  col = circleRectCollision(xp,yp,r,xo+10,yo+5,w,h);
-  console.log(col);
+  col_obj = circleRectCollision(xp,yp,r,xo+10,yo+5,w,h);
+  col_limit = colision_limites(xp,yp,r)
 
-  if (col == true) {
+  console.log(col_obj);
+  console.log(col_limit)
+
+  if ((col_obj == true) || (col_limit == true)) {
     crono.stop(); 
   } else {
     requestAnimationFrame(lanzar);
