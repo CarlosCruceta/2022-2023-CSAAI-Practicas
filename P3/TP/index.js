@@ -92,6 +92,12 @@ hechizo.src = "hechizo_50.png";
 var fondo = new Image();
 fondo.src = "fondo.jpg";
 
+var explosion = new Image();
+explosion.src = "explosion.gif"
+
+var humo = new Image();
+humo.src = "humo.png"
+
 let r = 10;
 let w = 70;
 let h = 108;
@@ -194,6 +200,7 @@ dibujarP(xo+10, yo+5, w, h, pcolor); // Pintar rect de colision
 dibujarO(x_h,y_h);
 
 
+
 // Circle-Rectangle Collision Detection
 function circleRectCollision(cx,cy,r,x,y,w,h) {
   // Calculate the distance between the center of the circle and the closest point on the rectangle
@@ -258,10 +265,12 @@ function lanzar()
 
   if (col_obj == true) {
     crono.stop(); 
+    ctx.drawImage(explosion, xp-30, yp-40);
     gui.display2.innerHTML = "EXITO";
     gui.display2.style.color = "green";
   
   } else if (col_limit == true) {
+    ctx.drawImage(humo, xp-60, yp-70);
     crono.stop(); 
   
   }else{
