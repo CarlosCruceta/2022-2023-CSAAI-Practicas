@@ -42,7 +42,7 @@ function update()
 
   //-- 2) Borrar el canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-
+      
   //-- 3) Dibujar los elementos visibles
   ctx.beginPath();
     ctx.rect(x, y, lr, lr);

@@ -72,27 +72,26 @@ const crono = new Crono(gui.display);
 const canvas = document.getElementById("canvas");
 
 //-- Definir el tamaño del canvas
-canvas.width = 800;
+canvas.width = 1000;
 canvas.height = 600;
 
 //-- Obtener el contexto del canvas
 const ctx = canvas.getContext("2d");
 
+var doby = new Image();
+doby.src = "doby_90.png";
+
+var voldemort = new Image();
+voldemort.src = "voldemort_90.png";
+
+
+var hechizo = new Image();
+hechizo.src = "hechizo_50.png";
+
 //-- Acceder al botón de disparo
 const btnLanzar = document.getElementById("btnLanzar");
 //-- Acceder al botón de inicio
 const btnIniciar = document.getElementById("btnIniciar");
-
-//-- Coordenadas iniciales del proyectil
-let xop = 5;
-let yop = 545;
-let xp = xop;
-let yp = yop;
-let angulo0 = 70; //Ángulo inicial de lanzamiento
-let t = 0; //Se inicia el tiempo a t = 0
-let v0 = 50; //Rapidez inicial
-let g = -9.8; //Aceleración de gravedad
-//--Generamos un número aleatorio
 
 function getRandomInt(min, max) {
   min = Math.ceil(min);
@@ -100,61 +99,51 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
+function dibujar_doby(x,y) {
+  doby.onload = function(){
+    ctx.drawImage(doby, x, y);
+  }
+}
+
+function dibujar_voldemort(x,y) {
+  voldemort.onload = function(){
+    ctx.drawImage(voldemort, x, y);
+  }
+}
+
+function dibujar_hechizo(x,y) {
+  hechizo.onload = function(){
+    ctx.drawImage(hechizo, x, y);
+  }
+}
+
+
+//-- Coordenadas iniciales del proyectil
+let xop = 5;
+let yop = 500;
+let xp = xop;
+let yp = yop;
+let x_h = xop +80;
+let y_h = yop +20;
+
+let t = 0; //Se inicia el tiempo a t = 0
+
+let g = 9.8; //Aceleración de gravedad
+//--Generamos un número aleatorio
+
+
 //-- Coordenadas iniciales del objetivo
 let xomin = 300;
-let xomax = canvas.width;
-let yomax = canvas.height;
+let xomax = canvas.width- 90;
+let yomax = canvas.height-117;
 let xo = getRandomInt(xomin,xomax); 
 let yo = getRandomInt(1,yomax);
 
+
 //-- función para pintar el proyectil
-function dibujarP(x,y,lx,ly,color) {
-
-  //-- Pintando el proyectil
-  ctx.beginPath();
-
-  //-- Definir un rectángulo de dimensiones lx x ly,
-  ctx.rect(x, y, lx, ly);
-
-  //-- Color de relleno del rectángulo
-  ctx.fillStyle = color;
-
-  //-- Mostrar el relleno
-  ctx.fill();
-
-  //-- Mostrar el trazo del rectángulo
-  ctx.stroke();
-
-  ctx.closePath();
-}
-
-//-- función para pintar el objetivo
-function dibujarO(x,y) {
-
-  //-- Pintando el objetivo
-  ctx.beginPath();
-
-  //-- Dibujar un circulo: coordenadas x,y del centro
-  //-- Radio, Angulo inicial y angulo final
-  ctx.arc(x, y, 25, 0, 2 * Math.PI);
-  ctx.strokeStyle = 'blue';
-  ctx.lineWidth = 2;
-  ctx.fillStyle = 'red';
-
-  //-- Dibujar el relleno
-  ctx.fill()    
-
-  //-- Dibujar el trazo
-  ctx.stroke();
-
-  ctx.closePath();
-}
-
-//-- Dibujar el objetivo
-dibujarO(xo,yo);
-
-//-- Dibujar el proyectil
-dibujarP(xop,yop,50,50,"green");
+dibujar_doby(xop,yop);
+dibujar_voldemort(xo,yo);
+dibujar_hechizo(x_h,y_h);
 
 
 function lanzar() 
@@ -162,32 +151,40 @@ function lanzar()
   //-- Implementación del algoritmo de animación:
 
   //-- 1) Actualizar posición de los elementos
+  let v0 = document.getElementById("vel").value;
+  let angulo0 = document.getElementById("angulo").value;
+  xp = x_h +  v0*Math.cos(angulo0*Math.PI/180)*t; 
+	yp = y_h  - (v0*Math.sin(angulo0*Math.PI/180) - g*t/2)*t;
 
-  xp = xop + v0 * Math.cos((angulo0* Math.PI) / 180) * t; //Se calcula posición x del proyectil
-  yp = yop +  Math.sin((angulo0* Math.PI )/ 180) * v0 * t -  (g * t * t /2); //Se calcula posición y del proyectil
-
-  t += 0.1;
-
+  t += 0.2;
+  
   
     // Detectamos si hay colisión (aquí o después de pintar los elementos )
   //-- 2) Borrar el canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-
+  
+ 
   //-- 3) Pintar los elementos en el canvas
-  dibujarO(xo,yo);
-  dibujarP(xp, yp, 50, 50, "blue"); // Pintar el proyectil
 
-  //-- 4) Repetir
+    //-- Dibujar
+  ctx.drawImage(doby, xop, yop);
+  ctx.drawImage(voldemort, xo, yo);
+  ctx.drawImage(hechizo, xp, yp);
+
+    //-- 4) Repetir
   requestAnimationFrame(lanzar);
+
 }
 
 
 //-- Función de retrollamada del botón de disparo
 btnLanzar.onclick = () => {
   lanzar();
+  crono.start();
 }
 
 //-- Función de retrollamada del botón iniciar
 btnIniciar.onclick = () => {
   location.reload();
+  crono.reset();
 }
