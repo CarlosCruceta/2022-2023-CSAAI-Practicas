@@ -280,7 +280,7 @@ function lanzar()
 
   if (col_obj == true) {
     crono.stop(); 
-    ctx.drawImage(explosion, xp-40, yp-60);
+    ctx.drawImage(explosion, xp-50, yp-70);
     gui.display2.innerHTML = "EXITO";
     gui.display2.style.color = "green";
   
