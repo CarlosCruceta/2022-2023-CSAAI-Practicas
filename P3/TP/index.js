@@ -201,6 +201,9 @@ dibujar_doby(xop,yop);
 dibujar_voldemort(xo,yo);
 dibujarP(xo+10, yo+5, w, h, pcolor); // Pintar rect de colision
 dibujarO(x_h,y_h);
+hechizo.onload = function(){
+  ctx.drawImage(hechizo, x_h-30, y_h-30);
+}
 
 
 
