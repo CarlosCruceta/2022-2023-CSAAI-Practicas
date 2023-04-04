@@ -88,6 +88,12 @@ voldemort.src = "voldemort_90.png";
 var hechizo = new Image();
 hechizo.src = "hechizo_50.png";
 
+let r = 10;
+let w = 70;
+let h = 108;
+let pcolor = "transparent";
+
+
 //-- Acceder al botón de disparo
 const btnLanzar = document.getElementById("btnLanzar");
 //-- Acceder al botón de inicio
@@ -117,6 +123,48 @@ function dibujar_hechizo(x,y) {
   }
 }
 
+function dibujarO(x,y) {
+
+  //-- Pintando el objetivo
+  ctx.beginPath();
+
+  //-- Dibujar un circulo: coordenadas x,y del centro
+  //-- Radio, Angulo inicial y angulo final
+  ctx.arc(x, y, r, 0, 2 * Math.PI);
+  ctx.strokeStyle = 'blue';
+  ctx.lineWidth = 2;
+  ctx.fillStyle = 'red';
+
+  //-- Dibujar el relleno
+  ctx.fill()    
+
+  //-- Dibujar el trazo
+  ctx.stroke();
+
+  ctx.closePath();
+}
+
+function dibujarP(x,y,lx,ly,color) {
+
+  //-- Pintando el proyectil
+  ctx.beginPath();
+
+  //-- Definir un rectángulo de dimensiones lx x ly,
+  ctx.rect(x, y, lx, ly);
+
+  //-- Color de relleno del rectángulo
+  ctx.fillStyle = color;
+
+  ctx.strokeStyle = color;
+
+  //-- Mostrar el relleno
+  ctx.fill();
+
+  //-- Mostrar el trazo del rectángulo
+  ctx.stroke();
+
+  ctx.closePath();
+}
 
 //-- Coordenadas iniciales del proyectil
 let xop = 5;
@@ -143,7 +191,55 @@ let yo = getRandomInt(1,yomax);
 //-- función para pintar el proyectil
 dibujar_doby(xop,yop);
 dibujar_voldemort(xo,yo);
-dibujar_hechizo(x_h,y_h);
+dibujarP(xo+10, yo+5, w, h, pcolor); // Pintar rect de colision
+dibujarO(x_h,y_h);
+
+function colision(cx,cy,r,x,y,w,h)
+{
+  let px = cx; // En principio son iguales
+  let py;
+
+  if ( px < x ) {
+    px = x;
+
+  } else  if ( px > x + w ){ 
+    px = x + w;
+    py = cy;
+
+  } else if ( py < y ) { 
+    py = y;
+
+  }else if ( py > y + h ) { 
+    py = y + h;
+  }
+
+  distancia = Math.sqrt( (cx - px)*(cx - px) + (cy - py)*(cy - py) );
+
+  if ( distancia < r ) {
+	  return true;
+  }
+  else{
+    return false;
+  }
+}
+
+// Circle-Rectangle Collision Detection
+function circleRectCollision(cx,cy,r,x,y,w,h) {
+  // Calculate the distance between the center of the circle and the closest point on the rectangle
+  let closestX = clamp(cx, x, x + w);
+  let closestY = clamp(cy, y, y + h);
+  let distanceX = cx - closestX;
+  let distanceY = cy - closestY;
+  let distanceSquared = distanceX * distanceX + distanceY * distanceY;
+  
+  // If the distance is less than or equal to the radius of the circle, then there is a collision
+  return distanceSquared <= r * r;
+}
+
+// Helper function to clamp a value between a minimum and maximum value
+function clamp(value, min, max) {
+  return Math.max(min, Math.min(max, value));
+}
 
 
 function lanzar() 
@@ -168,11 +264,22 @@ function lanzar()
 
     //-- Dibujar
   ctx.drawImage(doby, xop, yop);
+  dibujarP(xo+10, yo+5, w, h, pcolor);
   ctx.drawImage(voldemort, xo, yo);
-  ctx.drawImage(hechizo, xp, yp);
+  dibujarO(xp,yp);
 
     //-- 4) Repetir
-  requestAnimationFrame(lanzar);
+  col = circleRectCollision(xp,yp,r,xo+10,yo+5,w,h);
+  console.log(col);
+
+  if (col == true) {
+    crono.stop(); 
+  } else {
+    requestAnimationFrame(lanzar);
+   
+  }
+
+  
 
 }
 
