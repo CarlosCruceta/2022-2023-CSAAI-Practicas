@@ -1,5 +1,6 @@
 const gui = {
     display : document.getElementById("display"),
+    display2: document.getElementById("display2"),
     reset : document.getElementById("reset"),
   
 }
@@ -94,7 +95,7 @@ fondo.src = "fondo.jpg";
 let r = 10;
 let w = 70;
 let h = 108;
-let pcolor = "green";
+let pcolor = "transparent";
 
 
 //-- Acceder al botón de disparo
@@ -254,17 +255,14 @@ function lanzar()
   col_obj = circleRectCollision(xp,yp,r,xo+10,yo+5,w,h);
   col_limit = colision_limites(xp,yp,r)
 
-  console.log(col_obj);
-  console.log(col_limit)
 
   if ((col_obj == true) || (col_limit == true)) {
     crono.stop(); 
+    gui.display2.innerHTML = "EXITO";
   } else {
     requestAnimationFrame(lanzar);
    
   }
-
-  
 
 }
 
