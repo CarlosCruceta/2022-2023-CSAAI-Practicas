@@ -80,7 +80,7 @@ canvas.height = 600;
 const ctx = canvas.getContext("2d");
 
 var doby = new Image();
-doby.src = "doby_90.png";
+doby.src = "harry.png";
 
 var voldemort = new Image();
 voldemort.src = "voldemort_90.png";
@@ -100,6 +100,9 @@ humo.src = "humo.png"
 
 var hechizo = new Image();
 hechizo.src = "hechizo.png"
+
+var varita = new Image();
+varita.src = "varita.png"
 
 let r = 10;
 let w = 70;
@@ -199,12 +202,15 @@ let yo = getRandomInt(1,yomax);
 //-- función para pintar el proyectil
 dibujar_doby(xop,yop);
 dibujar_voldemort(xo,yo);
-dibujarP(xo+10, yo+5, w, h, pcolor); // Pintar rect de colision
-dibujarO(x_h,y_h);
-hechizo.onload = function(){
-  ctx.drawImage(hechizo, x_h-30, y_h-30);
-}
 
+dibujarP(xo+10, yo+5, w, h, pcolor); // Pintar rect de colision
+dibujarO(x_h+30,y_h-12);
+hechizo.onload = function(){
+  ctx.drawImage(hechizo, x_h, y_h-42);
+}
+varita.onload = function(){
+  ctx.drawImage(varita, x_h-15, y_h+10);
+}
 
 
 
@@ -246,8 +252,8 @@ function lanzar()
   //-- 1) Actualizar posición de los elementos
   let v0 = document.getElementById("vel").value;
   let angulo0 = document.getElementById("angulo").value;
-  xp = x_h +  v0*Math.cos(angulo0*Math.PI/180)*t; 
-	yp = y_h  - (v0*Math.sin(angulo0*Math.PI/180) - g*t/2)*t;
+  xp = (x_h+30) +  v0*Math.cos(angulo0*Math.PI/180)*t; 
+	yp = (y_h-12)  - (v0*Math.sin(angulo0*Math.PI/180) - g*t/2)*t;
 
   t += 0.2;
   
@@ -266,6 +272,7 @@ function lanzar()
   ctx.drawImage(voldemort, xo, yo);
   dibujarO(xp,yp);
   ctx.drawImage(hechizo, xp-30, yp-30);
+  ctx.drawImage(varita,x_h-15,y_h+10);
     //-- 4) Repetir
   col_obj = circleRectCollision(xp,yp,r,xo+10,yo+5,w,h);
   col_limit = colision_limites(xp,yp,r)
