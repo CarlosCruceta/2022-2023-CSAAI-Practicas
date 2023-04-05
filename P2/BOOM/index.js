@@ -1,5 +1,4 @@
-//-- Obtener una colección con todos los elementos
-//-- de la clase dígito
+
 const gui = {
     display : document.getElementById("display"),
     start : document.getElementById("start"),

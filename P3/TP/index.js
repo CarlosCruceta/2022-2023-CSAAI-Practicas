@@ -104,6 +104,22 @@ hechizo.src = "hechizo.png"
 var varita = new Image();
 varita.src = "varita.png"
 
+
+const sonido_hechizo = document.createElement("audio");
+sonido_hechizo.src = "sonido_hechizo.mp3";
+
+const sonido_explosion = document.createElement("audio");
+sonido_explosion.src = "sonido_explosion.mp3";
+
+const victoria = document.createElement("audio");
+victoria.src = "victoria.mp3";
+
+const derrota = document.createElement("audio");
+derrota.src = "derrota.mp3";
+
+const choque = document.createElement("audio");
+choque.src = "choque.mp3";
+
 let r = 10;
 let w = 70;
 let h = 108;
@@ -250,6 +266,7 @@ function lanzar()
   //-- Implementación del algoritmo de animación:
 
   //-- 1) Actualizar posición de los elementos
+  
   let v0 = document.getElementById("vel").value;
   let angulo0 = document.getElementById("angulo").value;
   xp = (x_h+30) +  v0*Math.cos(angulo0*Math.PI/180)*t; 
@@ -279,12 +296,16 @@ function lanzar()
 
 
   if (col_obj == true) {
+    sonido_explosion.play();
+    victoria.play();
     crono.stop(); 
     ctx.drawImage(explosion, xp-50, yp-70);
     gui.display2.innerHTML = "EXITO";
     gui.display2.style.color = "green";
   
   } else if (col_limit == true) {
+    choque.play();
+    derrota.play();
     ctx.drawImage(humo, xp-60, yp-70);
     crono.stop(); 
   
@@ -297,6 +318,7 @@ function lanzar()
 
 //-- Función de retrollamada del botón de disparo
 btnLanzar.onclick = () => {
+  sonido_hechizo.play();
   lanzar();
   crono.start();
 }
