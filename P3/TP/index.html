@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <h1>TP H.POTTER</h1>
+    <h1>TP HARRY POTTER</h1>
 
     <div class="fila">
 
@@ -27,24 +27,19 @@
                
                 <div class="caja">
                     <p>Ángulo de disparo</p>
-                    <input type="range" id ="angulo" form="ang" max="90" min="0" step="1" value="60">
+                    <input type="range" id ="angulo" class = "slider" form="ang" max="90" min="0" step="1" value="60">
                     <p>Velocidad de disparo</p>
-                    <input type="range" id ="vel" form="ang" max="200" min="20" step="1" value="80" >
+                    <input type="range" id ="vel"  class = "slider" form="ang" max="200" min="20" step="1" value="80" >
                     <br><br>
-                    <input type="button" id="btnLanzar" value="Disparar">
-                    <input type="button" id="btnIniciar" value="Iniciar">
+                    <input type="button" class = "boton" id="btnLanzar" value="Disparar">
+                    <input type="button" class = "boton" id="btnIniciar" value="Iniciar">
                 </div>
     
                  <div class="caja">
-                    <p>Resultado:</p>
-                    <p id="display2">FRACASO</p>
+                    <p id="display2">- - - -</p>
+                    <p id="display">0:0:0</p>
                 </div>
 
-                <div class="caja">
-                    <p>Timer</p>
-                    <p id="display">0:0:0</p>
-                   
-                </div>
             </div>
         </div>
 

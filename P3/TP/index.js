@@ -302,11 +302,15 @@ function lanzar()
     ctx.drawImage(explosion, xp-50, yp-70);
     gui.display2.innerHTML = "EXITO";
     gui.display2.style.color = "green";
+    gui.display.style.color = "green";
   
   } else if (col_limit == true) {
     choque.play();
     derrota.play();
     ctx.drawImage(humo, xp-60, yp-70);
+    gui.display2.innerHTML = "GAME OVER";
+    gui.display2.style.color = "red";
+    gui.display.style.color = "red";
     crono.stop(); 
   
   }else{
