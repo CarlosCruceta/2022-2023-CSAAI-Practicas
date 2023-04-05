@@ -14,24 +14,44 @@
     <script src="index.js" defer></script>
 
 </head>
+
 <body>
+    <h1>TP H.POTTER</h1>
 
+    <div class="fila">
 
-    <h1>Tiro parabólico</h1>
-    <canvas id="canvas"></canvas>
-    <br>
+        <!-- Columna derecha -->
+        <div class="columna derecha">
+
+            <div class="iresponsive">
+               
+                <div class="caja">
+                    <p>Ángulo de disparo</p>
+                    <input type="range" id ="angulo" form="ang" max="90" min="0" step="1" value="60">
+                    <p>Velocidad de disparo</p>
+                    <input type="range" id ="vel" form="ang" max="200" min="20" step="1" value="80" >
+                    <br><br>
+                    <input type="button" id="btnLanzar" value="Disparar">
+                    <input type="button" id="btnIniciar" value="Iniciar">
+                </div>
     
-    <p>Timer</p>
-    <p id="display">0:0:0</p>
-    <p>Resultado:</p>
-    <p id="display2">FRACASO</p>
-    <p>Ángulo de disparo</p>
-    <input type="range" id ="angulo" form="ang" max="90" min="0" step="1" value="60">
-    <p>Velocidad de disparo</p>
-    <input type="range" id ="vel" form="ang" max="200" min="20" step="1" value="80" >
-    <br><br>
-    <input type="button" id="btnLanzar" value="Disparar">
-    <input type="button" id="btnIniciar" value="Iniciar">
+                 <div class="caja">
+                    <p>Resultado:</p>
+                    <p id="display2">FRACASO</p>
+                </div>
 
+                <div class="caja">
+                    <p>Timer</p>
+                    <p id="display">0:0:0</p>
+                   
+                </div>
+            </div>
+        </div>
+
+        <!-- Columna izquierda -->
+        <div class="columna izquierda">
+            <canvas id="canvas" class="caja"></canvas>
+        </div>
+    </div>
 </body>
 </html>

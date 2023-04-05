@@ -74,7 +74,7 @@ const canvas = document.getElementById("canvas");
 
 //-- Definir el tamaño del canvas
 canvas.width = 1000;
-canvas.height = 600;
+canvas.height = 500;
 
 //-- Obtener el contexto del canvas
 const ctx = canvas.getContext("2d");
@@ -87,7 +87,7 @@ voldemort.src = "voldemort_90.png";
 
 
 var hechizo = new Image();
-hechizo.src = "hechizo_50.png";
+hechizo.src = "hechizo.png";
 
 var fondo = new Image();
 fondo.src = "fondo.jpg";
@@ -158,9 +158,9 @@ function dibujarO(x,y) {
   //-- Dibujar un circulo: coordenadas x,y del centro
   //-- Radio, Angulo inicial y angulo final
   ctx.arc(x, y, r, 0, 2 * Math.PI);
-  ctx.strokeStyle = 'blue';
+  ctx.strokeStyle = 'transparent';
   ctx.lineWidth = 2;
-  ctx.fillStyle = 'red';
+  ctx.fillStyle = 'transparent';
 
   //-- Dibujar el relleno
   ctx.fill()    
@@ -195,7 +195,7 @@ function dibujarP(x,y,lx,ly,color) {
 
 //-- Coordenadas iniciales del proyectil
 let xop = 5;
-let yop = 500;
+let yop = 400;
 let xp = xop;
 let yp = yop;
 let x_h = xop +80;
