@@ -301,8 +301,8 @@ function lanzar()
     crono.stop(); 
     ctx.drawImage(explosion, xp-50, yp-70);
     gui.display2.innerHTML = "EXITO";
-    gui.display2.style.color = "green";
-    gui.display.style.color = "green";
+    gui.display2.style.color = "#99ff33";
+    gui.display.style.color = "#99ff33";
   
   } else if (col_limit == true) {
     choque.play();
