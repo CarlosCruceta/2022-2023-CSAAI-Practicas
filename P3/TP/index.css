@@ -14,6 +14,7 @@
 
 body {
   font-family: "HARRYP__";
+  background-color: black;
 }
 
 canvas {
@@ -25,55 +26,43 @@ canvas {
     border-radius: 5px;
   }
 
+p{
+  margin:5%;
+}
 
-
-.boton{
-
-  background-color:rgb(229, 233, 4);
+.boton {
+  padding: 4%;
+  font-size: 30px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
   color: black;
+  background-color: #d5e409;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #9ca706;
   font-family: "HARRYP__";
-  font-size: 40px;
-  border-radius: 15%;
-
+  margin: 6%;
 }
 
-.slider {
-  appearance: auto;
-  cursor: default;
-  color: rgb(157, 150, 142);
-  padding: initial;
-  border: initial;
-  margin: 2px;
-}
+.boton:hover {background-color: #9ca706;}
 
-.caja_der {
-  width: 100%;
-  height: 100%;
-  color: black;
-  background-color: rgb(136, 227, 243);
-  opacity: 0.9;
-  padding-top: 0%;
-  padding-bottom: 5px;
-  border-color: black;
-  border-style: solid;
-  border-radius: 15%;
-  border-width: 3px;
-  margin-bottom: 5px;
-  margin-top: 10px;
+.boton:active {
+  background-color: #9ca706;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
-
 
 h1{
   text-align: center;
-  font-size: 60px;
+  font-size: 50px;
   border-color: rgb(229, 233, 4);
   color: rgb(229, 233, 4);
+  margin: 0%;
+  margin-top: 2%;
+  background-color: black;
 }
 
-/* Efecto de brillo*/
-.caja_der:hover {
-  opacity: 1.0;
-}
 
 /* Cajas de la columna izquierda*/
 .caja {
@@ -81,12 +70,11 @@ h1{
   height: auto;
   color: black;
   background-color: black;
-  opacity: 0.9;
   padding-top: 0%;
   padding-bottom: 5px;
   border-color: rgb(229, 233, 4);
   border-style: solid;
-  border-width: 5px;
+  border-width: 3px;
   margin-bottom: 5px;
   margin-top: 10px;
   margin-right: 40px;
@@ -95,10 +83,6 @@ h1{
   color: rgb(229, 233, 4);
 }
 
-/* Efecto de brillo*/
-.caja:hover {
-  opacity: 1.0;
-}
 
 
 
