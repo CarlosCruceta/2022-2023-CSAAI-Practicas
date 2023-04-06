@@ -277,7 +277,7 @@ function lanzar()
 
     //-- Dibujar
     
-  ctx.drawImage(doby, xop, yop);
+  ctx.drawImage(harry, xop, yop);
   dibujarP(xo+10, yo+5, w, h, pcolor);
   ctx.drawImage(voldemort, xo, yo);
   dibujarO(xp,yp);
