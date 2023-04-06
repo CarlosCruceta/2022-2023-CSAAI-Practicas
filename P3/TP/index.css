@@ -11,7 +11,6 @@
   
 }
   
-
 body {
   font-family: "HARRYP__";
   background-color: black;
@@ -66,7 +65,6 @@ h1{
 }
 
 
-/* Cajas de la columna izquierda*/
 .caja {
   width: 100%;
   height: auto;
@@ -89,7 +87,7 @@ h1{
   width: 100%;
   height: auto;
   color: rgb(229, 233, 4);
-  background-color:rgb(42,75,84);
+  background-color:rgb(29, 50, 56);
   padding-top: 0%;
   padding-bottom: 5px;
   border-color: rgb(229, 233, 4);
@@ -103,13 +101,11 @@ h1{
   font-size: 40px;
 }
 
-
-
 .caja_tiro{
   width: 100%;
   height: auto;
   color: black;
-  background-color:rgb(42,75,84);
+  background-color:rgb(29, 50, 56);
   padding-top: 0%;
   padding-bottom: 5px;
   border-color: rgb(229, 233, 4);
@@ -124,16 +120,14 @@ h1{
   color: rgb(229, 233, 4);
 }
 
-
-
-
-/*Efecto de movimiento en el texto del botón*/ 
-
+.fila{
+  margin-bottom: 0%;
+}
 
 
 /* Crear columnas de ancho diferente que se colocan una a continuación de la otra */
 .columna {
-float: right;
+float: left;
 padding: 10px;
 min-height: 500px;
 }
@@ -142,11 +136,14 @@ min-height: 500px;
 .derecha {
 width: 30%;
 
+
 }
 
 /* Columna izquierda*/ 
 .izquierda {
 width: 70%;
+text-align: center;
+
 }
 
 /* Clear floats despues de las columnas para eliminar la superposición */
@@ -156,12 +153,11 @@ display: table;
 clear: both;
 }
 
-
-/* Responsive */
 .iresponsive {
     padding: 0 6px;
-    float: left;
+    float: right;
     width: 80%;
+    margin:0px auto;
   }
 
 /* Responsive layout */

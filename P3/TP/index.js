@@ -79,8 +79,10 @@ canvas.height = 500;
 //-- Obtener el contexto del canvas
 const ctx = canvas.getContext("2d");
 
-var doby = new Image();
-doby.src = "harry.png";
+//-- Cargar imagenes y sonidos
+
+var harry = new Image();
+harry.src = "harry.png";
 
 var voldemort = new Image();
 voldemort.src = "voldemort_90.png";
@@ -97,9 +99,6 @@ explosion.src = "explosion.gif"
 
 var humo = new Image();
 humo.src = "humo.png"
-
-var hechizo = new Image();
-hechizo.src = "hechizo.png"
 
 var varita = new Image();
 varita.src = "varita.png"
@@ -137,9 +136,9 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
-function dibujar_doby(x,y) {
-  doby.onload = function(){
-    ctx.drawImage(doby, x, y);
+function dibujar_harry(x,y) {
+  harry.onload = function(){
+    ctx.drawImage(harry, x, y);
   }
 }
 
@@ -148,7 +147,6 @@ function dibujar_voldemort(x,y) {
     ctx.drawImage(voldemort, x, y);
   }
 }
-
 
 function dibujarO(x,y) {
 
@@ -216,7 +214,7 @@ let yo = getRandomInt(1,yomax);
 
 
 //-- función para pintar el proyectil
-dibujar_doby(xop,yop);
+dibujar_harry(xop,yop);
 dibujar_voldemort(xo,yo);
 
 dibujarP(xo+10, yo+5, w, h, pcolor); // Pintar rect de colision
@@ -229,26 +227,23 @@ varita.onload = function(){
 }
 
 
-
-
-// Circle-Rectangle Collision Detection
+// Colision entre circ y rect
 function circleRectCollision(cx,cy,r,x,y,w,h) {
-  // Calculate the distance between the center of the circle and the closest point on the rectangle
   let closestX = clamp(cx, x, x + w);
   let closestY = clamp(cy, y, y + h);
   let distanceX = cx - closestX;
   let distanceY = cy - closestY;
   let distanceSquared = distanceX * distanceX + distanceY * distanceY;
   
-  // If the distance is less than or equal to the radius of the circle, then there is a collision
   return distanceSquared <= r * r;
 }
 
-// Helper function to clamp a value between a minimum and maximum value
+// Valor max
 function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value));
 }
 
+// Colision con limites
 function colision_limites(x,y,r){
   if (x - r < 0 || x + r > canvas.width) {
     return true;
@@ -274,8 +269,6 @@ function lanzar()
 
   t += 0.2;
   
-  
-    // Detectamos si hay colisión (aquí o después de pintar los elementos )
   //-- 2) Borrar el canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   
@@ -290,7 +283,8 @@ function lanzar()
   dibujarO(xp,yp);
   ctx.drawImage(hechizo, xp-30, yp-30);
   ctx.drawImage(varita,x_h-15,y_h+10);
-    //-- 4) Repetir
+
+  //-- 4) Repetir
   col_obj = circleRectCollision(xp,yp,r,xo+10,yo+5,w,h);
   col_limit = colision_limites(xp,yp,r)
 
@@ -318,7 +312,6 @@ function lanzar()
   }
 
 }
-
 
 //-- Función de retrollamada del botón de disparo
 btnLanzar.onclick = () => {
