@@ -202,7 +202,6 @@ let y_h = yop +20;
 let t = 0; //Se inicia el tiempo a t = 0
 
 let g = 9.8; //Aceleración de gravedad
-//--Generamos un número aleatorio
 
 
 //-- Coordenadas iniciales del objetivo
