@@ -3,8 +3,10 @@ const selectors = {
     tablero: document.querySelector('.tablero'),
     movimientos: document.querySelector('.movimientos'),
     timer: document.querySelector('.timer'),
-    comenzar: document.querySelector('button'),
-    win: document.querySelector('.win')
+    comenzar: document.querySelector('.comenzar'),
+    reiniciar: document.querySelector('.reiniciar'),
+    win: document.querySelector('.win'),
+    dimensiones : document.querySelector('.dimension')
 }
 
 const state = {
@@ -14,6 +16,8 @@ const state = {
     totalTime: 0,
     loop: null
 }
+
+let dimensions;
 
 const pickRandom = (array, items) => {
     // La sintaxis de tres puntos nos sirve para hacer una copia del array
@@ -55,7 +59,12 @@ const shuffle = array => {
 }
 
 const generateGame = () => {
-    const dimensions = selectors.tablero.getAttribute('grid-dimension')
+    
+
+    dim_value = document.querySelector('input[name="dim"]:checked').value
+
+    dimensions = dim_value;
+    console.log(dimensions);
 
     //-- Nos aseguramos de que el número de dimensiones es par
     // y si es impar lanzamos un error
@@ -110,9 +119,13 @@ const attachEventListeners = () => {
             flipCard(eventParent)
         // Pero si lo que ha pasado es un clic en el botón de comenzar lo que hacemos es
         // empezar el juego
-        } else if (eventTarget.nodeName === 'BUTTON' && !eventTarget.className.includes('disabled')) {
+        } else if (eventTarget.className === 'comenzar' && !eventTarget.className.includes('disabled')) {
             startGame()
+        } else if (eventTarget.className === 'reiniciar'){
+            restartGame()
         }
+        
+
     })
 }
 
@@ -139,6 +152,24 @@ const startGame = () => {
     }, 1000)
 }
 
+const restartGame = () => {
+    // Iniciamos el estado de juego
+    generateGame()
+    state.gameStarted = false
+
+    // Ponemos el contado de parejas de cartas a cero
+    state.flippedCards = 0
+
+    // Desactivamos el botón de comenzar
+    clearInterval(state.loop)
+    selectors.comenzar.classList.remove('disabled')
+    state.totalFlips = 0;
+    state.totalTime = 0;
+    state.loop = 0;
+    selectors.movimientos.innerText = `${state.totalFlips} movimientos`
+    selectors.timer.innerText = `tiempo: ${state.totalTime} sec`
+    
+}
 
 const flipCard = card => {
     // Sumamos uno al contador de cartas giradas

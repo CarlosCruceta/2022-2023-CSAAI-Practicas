@@ -12,14 +12,20 @@
     <body>
         <div class="game">
             <div class="controles">
-                <button>Comenzar</button>
+                <button class="comenzar">Comenzar</button>
+                <button class="reiniciar">Reiniciar</button>
                 <div class="display">
                     <div class="movimientos">0 movimientos</div>
                     <div class="timer">tiempo: 0 sec</div>
+                    <div>
+                        <input type="radio" class="dimension" name="dim" value="2"> 2
+                        <input type="radio" class="dimension" name="dim" value="4" checked> 4
+                        <input type="radio" class="dimension" name="dim" value="6"> 6
+                    </div>
                 </div>
             </div>
             <div class="grid-container">
-                <div class="tablero" grid-dimension="4">
+                <div class="tablero" grid-dimension="6">
                     <div class="card">
                         <div class="card-front"></div>
                         <div class="card-back">🍍</div>
