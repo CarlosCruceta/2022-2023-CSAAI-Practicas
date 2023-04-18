@@ -104,7 +104,8 @@ const generateGame = () => {
 
     //-- Por último, vamos a inyectar el código html que hemos generado dentro de el contenedor
     // para el tablero de juego.
-    selectors.tablero.replaceWith(parser.querySelector('.tablero'))
+    const tablero = document.querySelector('.tablero');
+    tablero.replaceWith(parser.querySelector('.tablero'));
 }
 
 const attachEventListeners = () => {
@@ -123,6 +124,17 @@ const attachEventListeners = () => {
             startGame()
         } else if (eventTarget.className === 'reiniciar'){
             restartGame()
+            generateGame();
+            // Resetamos el estado del juego
+                state.flippedCards = [];
+                state.totalFlips = 0;
+                state.totalTime = 0;
+                state.loop = null;
+            
+            // Borramos las estadísticas del juego
+            selectors.win.innerHTML = '';
+            // Quitamos la clase 'flipped' del contenedor del tablero
+            selectors.gridContainer.classList.remove('flipped')
         }
         
 
