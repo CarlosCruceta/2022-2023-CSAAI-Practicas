@@ -1,17 +1,27 @@
+* {
+    box-sizing: border-box;
+  }
+  
 @font-face {
-    font-family: "octin";
-    src: url("octin\ sports\ free.ttf");
+    font-family: "RIO";
+    src: url("Rio2016-Light.ttf");
+    
+}
+
+body{
+    background-image: url(fondo2.png);
     
 }
 
 h1 {
     text-align: center;
+    font-size: 50px;
+    color: white;
 }
 
 html {
    
-    /* background: linear-gradient(325deg,  #6f00fc 0%,#fc7900 50%,#fcc700 100%); */
-    font-family: octin;
+    font-family: RIO;
 }
 
 .game {
@@ -22,38 +32,66 @@ html {
 }
 
 .controles {
-    margin-top: 5%;
+    margin-top: 22%;
     margin-bottom: 20px;
+    float: right;
+    padding: 4%;
+    background:rgba(0, 0, 0, 0.4);
+    border-radius: 4%;
+    border-style:hidden;
+    border-color: black;
+    
 }
 
 button {
-    background: #282A3A;
+    background: #e77a14;
     color: #FFF;
     border-radius: 5px;
     padding: 10px 20px;
+    margin-right: 3%;
     border: 0;
     cursor: pointer;
-    font-family: octin;
-    font-size: 18pt;
+    font-family: RIO;
+    font-size: 25px;
+    box-shadow: 0 9px #944e0d;
+}
+
+
+
+
+button:active {
+background-color: #944e0d;
+box-shadow: 0 5px #944e0d;
+transform: translateY(4px);
 }
 
 .disabled {
     color: #757575;
+    
 }
 
 .display {
     color: #282A3A;
-    font-size: 14pt;
+    font-size: 25px;
+    text-align: left; 
+    color: white;
 }
 
+#d1{
+    font-size: 34px;
+    color: white;
+}
 .grid-container {
     position: relative;
-}
+    max-width: auto;
+    margin: 0 auto;
+    
+  }
 
 .tablero,
 .win {
     border-radius: 5px;
-    box-shadow: 0 25px 50px rgb(33 33 33 / 25%);
+    
     /* background: linear-gradient(135deg,  #6f00fc 0%,#fc7900 50%,#fcc700 100%); */
     transition: transform .6s cubic-bezier(0.4, 0.0, 0.2, 1);
     backface-visibility: hidden;
@@ -62,7 +100,7 @@ button {
 .tablero {
     padding: 20px;
     display: grid;
-    justify-content: center;
+    justify-content: left;
     grid-template-columns: repeat(4, auto);
     grid-gap: 20px;
 }
@@ -86,9 +124,12 @@ button {
 .card-back {
     position: absolute;
     border-radius: 5px;
+    border-style: solid;
+    border-color: black;
     width: 100%;
     height: 100%;
-    background: #282A3A;
+    background-image: url("aros.png");
+    background-color: white;
     transition: transform .6s cubic-bezier(0.4, 0.0, 0.2, 1);
     backface-visibility: hidden;
 }
@@ -97,7 +138,7 @@ button {
     font-size: 28pt;
     text-align: center;
     line-height: 100px;
-    background: #FDF8E6;
+    background: #f0d4ba;
     transform: rotateY(180deg) rotateZ(50deg);
     user-select: none;
 }
@@ -117,7 +158,7 @@ button {
     width: 100%;
     height: 100%;
     text-align: center;
-    background: #FDF8E6;
+    background: #f0d4ba;
     transform: rotateY(180deg) rotateZ(50deg);
 }
 
@@ -131,5 +172,103 @@ button {
 }
 
 .highlight {
-    color: #6f00fc;
+    color: #0e4fdb;
+}
+
+  
+.fila{
+  margin-bottom: 0%;
+}
+
+
+/* Crear columnas de ancho diferente que se colocan una a continuación de la otra */
+.columna {
+float: left;
+padding: 10px;
+min-height: 500px;
+}
+
+/* Columna derecha*/ 
+.derecha {
+width: 35%;
+
+}
+
+/* Columna izquierda*/ 
+.izquierda {
+width: 65%;
+text-align: center;
+
+}
+
+/* Clear floats despues de las columnas para eliminar la superposición */
+.fila:after {
+content: "";
+display: table;
+clear: both;
+}
+
+.iresponsive {
+    padding: 0 6px;
+    float: right;
+    width: 80%;
+    margin:0px auto;
+  }
+
+/* Responsive layout */
+
+@media screen and (max-width: 600px) {
+    .columna {
+      width: 100%;
+    }
+
+    .iresponsive {
+        width: 100%;
+    }
+    
+}
+
+@media screen and (max-width: 812px) {
+
+  .iresponsive {
+      width: 100%;
+  }
+
+  button {
+    margin-bottom: 3%;
+  }
+  
+}
+
+@media screen and (max-width: 670px) {
+ 
+  .iresponsive {
+      width: 100%;
+  }
+  button {
+    margin-bottom: 3%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+    .columna {
+      width: 100%;
+    }
+
+    .iresponsive {
+        width: 100%;
+    }
+    button {
+        margin-bottom: 3%;
+      }
+}
+
+@media screen and (max-width: 330px) {
+    .controles{
+        float: center;
+    }
+    h1{
+        padding-top: 4%;
+        padding-left: 4%;
+    }
 }
