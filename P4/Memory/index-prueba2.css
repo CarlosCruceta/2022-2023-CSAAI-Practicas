@@ -1,17 +1,22 @@
+* {
+    box-sizing: border-box;
+  }
+  
 @font-face {
-    font-family: "octin";
-    src: url("octin\ sports\ free.ttf");
+    font-family: "RIO";
+    src: url("Rio2016-Light.ttf");
     
 }
 
+
 h1 {
     text-align: center;
+    font-size: 50px;
 }
 
 html {
    
-    /* background: linear-gradient(325deg,  #6f00fc 0%,#fc7900 50%,#fcc700 100%); */
-    font-family: octin;
+    font-family: RIO;
 }
 
 .game {
@@ -22,8 +27,9 @@ html {
 }
 
 .controles {
-    margin-top: 5%;
+    margin-top: 22%;
     margin-bottom: 20px;
+    float: right;
 }
 
 button {
@@ -33,27 +39,33 @@ button {
     padding: 10px 20px;
     border: 0;
     cursor: pointer;
-    font-family: octin;
+    font-family: RIO;
     font-size: 18pt;
 }
 
 .disabled {
     color: #757575;
+    
 }
 
 .display {
     color: #282A3A;
-    font-size: 14pt;
+    font-size: 20px;
+    text-align: left;
+    
 }
 
 .grid-container {
     position: relative;
-}
+    max-width: auto;
+    margin: 0 auto;
+    
+  }
 
 .tablero,
 .win {
     border-radius: 5px;
-    box-shadow: 0 25px 50px rgb(33 33 33 / 25%);
+    
     /* background: linear-gradient(135deg,  #6f00fc 0%,#fc7900 50%,#fcc700 100%); */
     transition: transform .6s cubic-bezier(0.4, 0.0, 0.2, 1);
     backface-visibility: hidden;
@@ -62,7 +74,7 @@ button {
 .tablero {
     padding: 20px;
     display: grid;
-    justify-content: center;
+    justify-content: left;
     grid-template-columns: repeat(4, auto);
     grid-gap: 20px;
 }
@@ -86,9 +98,12 @@ button {
 .card-back {
     position: absolute;
     border-radius: 5px;
+    border-style: solid;
+    border-color: black;
     width: 100%;
     height: 100%;
-    background: #282A3A;
+    background-image: url("aros.png");
+    background-color: white;
     transition: transform .6s cubic-bezier(0.4, 0.0, 0.2, 1);
     backface-visibility: hidden;
 }
@@ -133,3 +148,73 @@ button {
 .highlight {
     color: #6f00fc;
 }
+
+  
+.fila{
+  margin-bottom: 0%;
+}
+
+
+/* Crear columnas de ancho diferente que se colocan una a continuación de la otra */
+.columna {
+float: left;
+padding: 10px;
+min-height: 500px;
+}
+
+/* Columna derecha*/ 
+.derecha {
+width: 40%;
+
+}
+
+/* Columna izquierda*/ 
+.izquierda {
+width: 60%;
+text-align: center;
+
+}
+
+/* Clear floats despues de las columnas para eliminar la superposición */
+.fila:after {
+content: "";
+display: table;
+clear: both;
+}
+
+.iresponsive {
+    padding: 0 6px;
+    float: right;
+    width: 80%;
+    margin:0px auto;
+  }
+
+/* Responsive layout */
+
+@media screen and (max-width: 600px) {
+    .columna {
+      width: 100%;
+    }
+
+    .iresponsive {
+        width: 100%;
+    }
+    
+}
+
+@media screen and (max-width: 812px) {
+
+  .iresponsive {
+      width: 100%;
+  }
+  
+}
+
+@media screen and (max-width: 670px) {
+ 
+  .iresponsive {
+      width: 100%;
+  }
+  
+}
+

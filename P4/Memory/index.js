@@ -272,4 +272,7 @@ const flipBackCards = () => {
             // Paramos el loop porque el juego ha terminado
             clearInterval(state.loop)
         }, 1000)
+        
     }
+
+   

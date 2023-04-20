@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiro parabólico</title>
+
+    <!-- Hoja de estilo -->
+    <link rel="stylesheet" href="index-prueba2.css">
+
+    <!-- Código javascript -->
+    <script src="index.js" defer></script>
+
+</head>
+
+<body>
+    <h1> The olympics memory games</h1> 
+
+    <div class="fila">
+
+        <!-- Columna derecha -->
+        <div class="columna derecha">
+
+            <div class="iresponsive">
+                <div class="controles">
+                    <button class="comenzar">Comenzar</button>
+                    <br>
+                    <br>
+                    <button class="reiniciar">Reiniciar</button>
+                    <div class="display">
+                        <p>Seleccione el tamaño del tablero:</p>
+                        <input type="radio" class="dimension" name="dim" value="2"> 2x2
+                        <input type="radio" class="dimension" name="dim" value="4" checked> 4x4
+                        <input type="radio" class="dimension" name="dim" value="6"> 6x6
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+
+        <!-- Columna izquierda -->
+        <div class="columna izquierda">
+            <div class="display">
+                <span class="movimientos">0 movimientos</span>
+                <span class="timer">tiempo: 0 sec</span>
+            </div>
+            <br>
+            <div class="grid-container">
+                <div class="tablero" grid-dimension="6">
+                    <div class="card">
+                        <div class="card-front"></div>
+                        <div class="card-back">🎱</div>
+                    </div>
+                </div>
+                <div class="win">¡Has Ganado!</div>
+                </div>
+        </div>
+    </div>
+</body>
+</html>
