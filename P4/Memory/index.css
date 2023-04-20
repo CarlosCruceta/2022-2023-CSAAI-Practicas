@@ -83,7 +83,6 @@ transform: translateY(4px);
 }
 .grid-container {
     position: relative;
-    max-width: auto;
     margin: 0 auto;
     
   }
@@ -265,7 +264,7 @@ clear: both;
 
 @media screen and (max-width: 330px) {
     .controles{
-        float: center;
+        margin-left:10%;
     }
     h1{
         padding-top: 4%;
