@@ -1,13 +1,18 @@
 @font-face {
-    font-family: Montserrat;
-    src: url(./Montserrat-Regular.ttf);
+    font-family: "octin";
+    src: url("octin\ sports\ free.ttf");
+    
+}
+
+h1 {
+    
 }
 
 html {
     width: 100%;
     height: 100%;
     /* background: linear-gradient(325deg,  #6f00fc 0%,#fc7900 50%,#fcc700 100%); */
-    font-family: Montserrat;
+    font-family: octin;
 }
 
 .game {
@@ -17,7 +22,7 @@ html {
     transform: translate(-50%, -50%);
 }
 
-.controls {
+.controles {
     display: flex;
     gap: 20px;
     margin-bottom: 20px;
@@ -30,7 +35,7 @@ button {
     padding: 10px 20px;
     border: 0;
     cursor: pointer;
-    font-family: Montserrat;
+    font-family: octin;
     font-size: 18pt;
 }
 
@@ -128,17 +133,4 @@ button {
 
 .highlight {
     color: #6f00fc;
-}
-
-
-
-@media screen and (max-width: 400px) {
-    .game {
-        padding: 10px;
-    }
-
-    .display {
-        flex-direction: column;
-        align-items: flex-start;
-    }
 }

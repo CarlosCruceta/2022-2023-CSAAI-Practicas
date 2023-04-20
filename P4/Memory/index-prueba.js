@@ -73,7 +73,7 @@ const generateGame = () => {
     }
 
     //-- Creamos un array con los emojis que vamos a utilizar en nuestro juego
-    const emojis = ['🎱', '⚽', '🏈', '🎾', '🎳', '⚾', '🏓', '🥊', '🏐', '⛸️', '🥋', '🏸', '🏒', '🥌', '🛹', '🎯', '🏆', '🏅']
+    const emojis = ['img1.jpg', 'img2.jpg']
     
     //-- Elegimos un subconjunto de emojis al azar, así cada vez que comienza el juego
     // es diferente.
@@ -92,7 +92,7 @@ const generateGame = () => {
             ${items.map(item => `
                 <div class="card">
                     <div class="card-front"></div>
-                    <div class="card-back">${item}</div>
+                    <div class="card-back"><img src="${item}" alt=""></div>
                 </div>
             `).join('')}
        </div>
