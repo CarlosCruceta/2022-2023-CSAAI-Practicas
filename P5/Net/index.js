@@ -111,24 +111,24 @@ const sendImage = () => {
     sw2 = sw1;
     sh2 = state.totalPackages - sh1;
 
-    // if (sh2 > 0) {
-    //   //-- seleccionamos el rectángulo 2
-    //   imgData = ctx.getImageData(sx2, sy2, sw2, sh2);
+    if (sh2 > 0) {
+      //-- seleccionamos el rectángulo 2
+      imgData = ctx.getImageData(sx2, sy2, sw2, sh2);
 
-    //   //-- Obtener el array con todos los píxeles
-    //   data = imgData.data
+      //-- Obtener el array con todos los píxeles
+      data = imgData.data
   
-    //   for (let i = 0; i < data.length; i+=4) {
-    //     // brillo = (3 * r + 4 * g + b)/8
-    //     //let brillo = (3 * data[i] + 4 * data[i+1] + data[i+2])/8
-    //     //data[i] = brillo;
-    //     //data[i+1] = brillo;
-    //     //data[i+2] = brillo; 
-    //     //data[i] = 0;
-    //     //data[i+1] = 0;
-    //     data[i+2] = 0;         
-    //   }  
-    // }
+      for (let i = 0; i < data.length; i+=4) {
+      brillo = (3 * r + 4 * g + b)/8
+      let brillo = (3 * data[i] + 4 * data[i+1] + data[i+2])/8
+      data[i] = brillo;
+      data[i+1] = brillo;
+      data[i+2] = brillo; 
+      data[i] = 0;
+      data[i+1] = 0;
+      data[i+2] = 0;         
+      }  
+    }
 
     //-- Poner la imagen modificada en el canvas
     ctx.putImageData(imgData, 0, 0);
