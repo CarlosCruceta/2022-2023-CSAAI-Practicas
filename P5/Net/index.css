@@ -2,10 +2,10 @@ body {
   background-color: grey;
 }
 
+canvas {
+  background-color: white;
+}
 #cloud {
 display: none;
 }
 
-#imagesrchide {
-display: none;
-}

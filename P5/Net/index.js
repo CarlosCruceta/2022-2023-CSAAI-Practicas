@@ -22,7 +22,6 @@ const state = {
   sendingPackage:0,
   netDelay: 1,
   numNodos: 3,
-  Total_delay: 0,
   netDelayDefault: 1,
   loop: null
 }
@@ -121,9 +120,7 @@ const sendImage = () => {
     }
 
     console.log("Enviando...");
-    state.Total_delay = state.netDelay * state.numNodos;
-    console.log(state.totalTime);
-  }, state.netDelay * state.numNodos*0.001)
+  }, state.netDelay * state.numNodos)
 }
 
 
