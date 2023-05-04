@@ -123,7 +123,7 @@ const sendImage = () => {
     console.log("Enviando...");
     state.Total_delay = state.netDelay * state.numNodos;
     console.log(state.totalTime);
-  }, state.netDelay * state.numNodos * 10)
+  }, state.netDelay * state.numNodos*0.001)
 }
 
 
