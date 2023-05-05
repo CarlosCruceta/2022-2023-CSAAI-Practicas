@@ -6,6 +6,7 @@ const gui = {
   numnodosvalue : document.getElementById("numnodos_value"),
   netdelay : document.getElementById("netdelay"),
   netdelayvalue : document.getElementById("netdelay_value"),
+  display : document.getElementById("display"),
 }
 
 //-- Obtener elementos del DOM
@@ -23,7 +24,8 @@ const state = {
   netDelay: 1,
   numNodos: 3,
   netDelayDefault: 1,
-  loop: null
+  loop: null,
+  fin: false,
 }
 
 //-- Iniciar el valor del deslizador con el valor de la 
@@ -47,7 +49,10 @@ imgCloud.onload = function () {
 
 //-- función de callback para el envío de la imagen
 gui.bsend.onclick = () => {
-  sendImage()
+  if (state.fin == false){
+    sendImage()
+  }
+  
 }
 
 //-- función de callback para actualizar los valores del 
@@ -71,6 +76,8 @@ gui.netdelay.oninput = () => {
 //-- https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/getImageData
 const sendImage = () => {
   console.log("Comienzo a enviar...");
+
+  gui.display.innerHTML = "ENVIANDO IMAGEN...";
 
   //-- Se establece como tamaño del canvas el mismo
   //-- que el de la imagen original
@@ -117,6 +124,8 @@ const sendImage = () => {
       console.log("Envio terminado...");
       state.sendingImage = false;             
       clearInterval(state.loop);
+      gui.display.innerHTML = " ";
+      state.fin = true;
     }
 
     console.log("Enviando...");

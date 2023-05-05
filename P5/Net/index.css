@@ -9,3 +9,7 @@ canvas {
 display: none;
 }
 
+#display{
+  color: red;
+}
+
