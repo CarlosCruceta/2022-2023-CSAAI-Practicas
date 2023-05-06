@@ -82,11 +82,13 @@ h1{
 }
 
 #numnodos_value{
-    color: #7B68EE
+    color: #00BFFF;
+    font-size: 25px;
 }
 
 #netdelay_value{
-    color: #7B68EE;
+    color: #00BFFF;
+    font-size: 25px;
 }
 
 
