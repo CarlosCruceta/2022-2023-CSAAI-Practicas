@@ -30,6 +30,7 @@ canvas {
   
 #display{
     color: #00BFFF;
+    font-size: 30px;
   }
   
 
@@ -134,6 +135,12 @@ clear: both;
   }
 
 /* Responsive layout */
+@media screen and (max-width: 938px) {
+  .izquierda {
+    margin-left: 5%;
+  }
+
+}
 
 @media screen and (max-width: 600px) {
     .columna {

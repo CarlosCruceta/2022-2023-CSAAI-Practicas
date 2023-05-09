@@ -111,7 +111,7 @@ const sendImage = () => {
     //-- Cambiar el color de la sección a rojo
     for (let i = 0; i < data.length; i += 4) {
       data[i] = 0;   // canal rojo
-      data[i+1] = 0;   // canal verde
+      data[i+1] = 191;   // canal verde
       data[i+2] = 255;   // canal azul
     } 
 
