@@ -1,15 +1,171 @@
+/* Así definimos el comportamiento de caja para todos los elementos */
+* {
+    box-sizing: border-box;
+    font-family: "DIGITAL";
+    color: #7B68EE;
+  }
+
+/* Tipo de fuente externa*/
+
+@font-face {
+  font-family: "DIGITAL";
+  src: url("VCR_OSD_MONO_1.001.ttf");
+  
+}
+
+
 body {
-  background-color: grey;
-}
-
+    background-color: black;
+    background-image: url("fondo.png");
+  }
+  
 canvas {
-  background-color: white;
-}
+    background-color: white;
+    width: 400px;
+    height: 179px;
+  }
 #cloud {
-display: none;
+  display: none;
+  }
+  
+#display{
+    color: #00BFFF;
+    font-size: 30px;
+  }
+  
+
+p{
+  margin:5%;
+  font-size: 20px;
 }
 
-#display{
-  color: red;
+button  {
+  padding: 2%;
+  background-image: none;
+  font-size: 30px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: black;
+  background-color:  #00BFFF;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #008ebd;
+  font-family: "DIGITAL";
+  margin-left: 6%;
+}
+
+button:hover {background-color: #008ebd;;}
+
+button:active {
+  background-color: #008ebd;;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+h1{
+  text-align: center;
+  font-size: 50px;
+  border-color: rgb(229, 233, 4);
+  color: #00BFFF;
+  margin: 0%;
+  margin-top: 2%;
+}
+
+#numnodos{
+    margin-left: 4%;
+    color: #7B68EE;
+}
+
+#netdelay{
+    margin-left: 4%;
+    color: #7B68EE;
+}
+
+#numnodos_value{
+    color: #00BFFF;
+    font-size: 25px;
+}
+
+#netdelay_value{
+    color: #00BFFF;
+    font-size: 25px;
+}
+
+
+.fila{
+  margin-bottom: 0%;
+}
+
+
+/* Crear columnas de ancho diferente que se colocan una a continuación de la otra */
+.columna {
+float: left;
+padding: 10px;
+min-height: 500px;
+}
+
+/* Columna derecha*/ 
+.derecha {
+width: 50%;
+text-align: right;
+
+
+}
+
+/* Columna izquierda*/ 
+.izquierda {
+width: 50%;
+text-align: left;
+
+}
+
+/* Clear floats despues de las columnas para eliminar la superposición */
+.fila:after {
+content: "";
+display: table;
+clear: both;
+}
+
+.iresponsive {
+    padding: 0 6px;
+    float: right;
+    width: 80%;
+    margin:0px auto;
+  }
+
+/* Responsive layout */
+@media screen and (max-width: 938px) {
+  .izquierda {
+    margin-left: 5%;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+    .columna {
+      width: 100%;
+    }
+
+    .iresponsive {
+        width: 100%;
+    }
+    
+}
+
+@media screen and (max-width: 812px) {
+
+  .iresponsive {
+      width: 100%;
+  }
+  
+}
+
+@media screen and (max-width: 670px) {
+ 
+  .iresponsive {
+      width: 100%;
+  }
+  
 }
 

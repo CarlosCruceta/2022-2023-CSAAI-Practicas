@@ -1,4 +1,3 @@
-console.log("Montando la red...")
 
 const gui = {
   bsend : document.getElementById("bsend"),
@@ -108,7 +107,7 @@ const sendImage = () => {
     imgData = ctx.getImageData(sx, sy, sw, sh);
     const data = imgData.data;
 
-    //-- Cambiar el color de la sección a rojo
+    //-- Cambiar el color de la sección 
     for (let i = 0; i < data.length; i += 4) {
       data[i] = 0;   // canal rojo
       data[i+1] = 191;   // canal verde
@@ -128,9 +127,5 @@ const sendImage = () => {
       state.fin = true;
     }
 
-    console.log("Enviando...");
   }, state.netDelay * state.numNodos)
 }
-
-
-console.log("Red preparada...");
